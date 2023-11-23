@@ -39,25 +39,25 @@ int main() {
 
 	fill_array(arr, row, column);
 
-	cout << "\n\tИсходный массив: " << endl;
+	cout << "\n\tSource array: " << endl;
 	print_array(arr, row, column);
 
 	int** extended_array;
 
 	create_extended_array(arr, row, column, extended_array);
 
-	cout << "\n\tРасширенный массив: " << endl;
+	cout << "\n\tExtended Array: " << endl;
 	print_array(extended_array, 2 * row, column);
 
 	int min_value = find_min_element(arr, row, column);
-	cout << "\n\tМинимальное значение: " << min_value << endl;
+	cout << "\n\tMinimum value: " << min_value << endl;
 
 	int max_value = find_max_element(arr, row, column);
-	cout << "\n\tМаксимальное значение: " << max_value << endl;
+	cout << "\n\tMaximum value:" << max_value << endl;
 
 	int** trans_array = create_transposed_array(arr, row, column);
 
-	cout << "\n\tТранспонированный массив: " << endl;
+	cout << "\n\tTransposed array: " << endl;
 	print_array(trans_array, column, row);
 
 	delete_array_clear_memory(arr, row);
@@ -69,10 +69,10 @@ int main() {
 
 // запрос у пользователя размерности массива (row, column)
 void get_array_size(int &row, int &column) {
-	cout << "\tКоличество строк: ";
+	cout << "\tNumber of rows: ";
 	cin >> row;
 
-	cout << "\n\tКоличество столбцов: ";
+	cout << "\n\tNumber of columns: ";
 	cin >> column;
 }
 
@@ -86,7 +86,7 @@ int** create_array(int row, int column) {
 
 // заполнение массива 
 void fill_array(int** arr, int row, int column) {
-	cout << "\n\tВведите элементы массива: " << endl;
+	cout << "\n\tEnter the array elements: " << endl;
 	for (int i = 0; i < row; i++) {
 		for (int j = 0; j < column; j++) {
 			cout << "\tarr[" << i+1 << "][" << j+1 << "] = ";

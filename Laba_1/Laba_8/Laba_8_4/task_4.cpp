@@ -7,7 +7,6 @@
 */
 
 #include <iostream>
-#include <string>
 
 using std::cout;
 using std::cin;
@@ -53,18 +52,18 @@ int main() {
 	DotaHero hero3 = { 3, "Anti-Mage", 19, 24, 12, 310, 538, 219, 5 };
 	DotaHero hero4 = { 4, "Juggernaut", 20, 34, 14, 300, 560, 243, 6 };
 
-	cout << "\n\tСуществующих героев: " << DotaHero::count << endl;
-	cout << "\tВсего создано героев: " << DotaHero::count_All << endl;
+	cout << "\n\tExisting Heroes: " << DotaHero::count << endl;
+	cout << "\tTotal heroes created: " << DotaHero::count_All << endl;
 
 	DotaHero* hero5 = new DotaHero{ 5, "Faceless Void", 20, 19, 15, 300, 560, 255, 4 };
 
-	cout << "\n\tСуществующих героев: " << DotaHero::count << endl;
-	cout << "\tВсего создано героев: " << DotaHero::count_All << endl;
+	cout << "\n\tExisting Heroes: " << DotaHero::count << endl;
+	cout << "\tTotal heroes created: " << DotaHero::count_All << endl;
 
 	delete hero5;
 
-	cout << "\n\tСуществующих героев: " << DotaHero::count << endl;
-	cout << "\tВсего создано героев: " << DotaHero::count_All << endl;
+	cout << "\n\tExisting Heroes: " << DotaHero::count << endl;
+	cout << "\tTotal heroes created: " << DotaHero::count_All << endl;
 
 	return 0;
 }

@@ -30,17 +30,17 @@ int main() {
 
 	int* dyn_array = create_dynamic_array(length);
 
-	cout << "Введите массив: " << endl;
+	cout << "Enter an array: " << endl;
 
 	for (int i = 0; i < length; i++) {
 		cin >> dyn_array[i];
 	}
 
 	int min_element = find_min_element(dyn_array, length);
-	cout << "Минимальный элемент - " << min_element << endl;
+	cout << "Minimum element - " << min_element << endl;
 
 	int max_element = find_max_element(dyn_array, length);
-	cout << "Максимальный элемент - " << max_element << endl;
+	cout << "Maximum element - " << max_element << endl;
 
 	// указатели на min и max элементы вручную
 	int* ptr_min = dyn_array;
@@ -55,7 +55,7 @@ int main() {
 	}
 
 	int count = count_elements_between(ptr_min, ptr_max);
-	cout << "Элементов между - " << count << endl;
+	cout << "Elements between - " << count << endl;
 
 	delete[] dyn_array;
 
@@ -65,7 +65,7 @@ int main() {
 // запрос у пользователя размерности массива (len)
 int get_array_size() {
 	int length;
-	cout << "Введите размерность массива: ";
+	cout << "Enter the dimension of the array:";
 	cin >> length;
 	return length;
 }
