@@ -30,14 +30,14 @@ int main() {
         cout << "\tВаш выбор --> ";	 cin >> choice;		cout << '\n' << '\n';
 
         switch (choice) {
-        case static_cast<int>(Main_Menu::INPUT):                        search_value = get_user_input();                                break;
-        case static_cast<int>(Main_Menu::LINEAR_SEARCH):		        linear_search(arr, search_value, comparasion);	                break;
-        case static_cast<int>(Main_Menu::JUMP_SEARCH):		            jump_search(arr, search_value, comparasion);		            break;
-        case static_cast<int>(Main_Menu::INDEX_SEQUENTIAL_SEARCH):		index_sequential_search(arr, step, key, comparasion);		    break;
-        case static_cast<int>(Main_Menu::BINARY_SEARCH):	            binary_search(arr, search_value, comparasion);			        break;
-        case static_cast<int>(Main_Menu::BINARY_SEARCH_RECURSIVE):	    binary_search_recursive(arr, search_value, left, right, comparasion);		    break;
-        case static_cast<int>(Main_Menu::OUTPUT):		                print_arr(arr);				        break;
-        case static_cast<int>(Main_Menu::EXIT):			                exit(flag);		system("pause");    break;
+        case static_cast<int>(Main_Menu::INPUT):                    search_value = get_user_input();                                                break;
+        case static_cast<int>(Main_Menu::LINEAR_SEARCH):		    linear_search(arr, search_value, comparasion);	                                break;
+        case static_cast<int>(Main_Menu::JUMP_SEARCH):		        jump_search(arr, search_value, comparasion);		                            break;
+        case static_cast<int>(Main_Menu::INDEX_SEQUENTIAL_SEARCH):	index_sequential_search(arr, step, key, comparasion);		                    break;
+        case static_cast<int>(Main_Menu::BINARY_SEARCH):	        binary_search(arr, search_value, comparasion);			                        break;
+        case static_cast<int>(Main_Menu::BINARY_SEARCH_RECURSIVE):	binary_search_recursive(arr, search_value, left, right, comparasion);		    break;
+        case static_cast<int>(Main_Menu::OUTPUT):		            print_arr(arr);				                                                    break;
+        case static_cast<int>(Main_Menu::EXIT):			            exit(flag);		system("pause");                                                break;
 
         default:	error();	break;
         }
