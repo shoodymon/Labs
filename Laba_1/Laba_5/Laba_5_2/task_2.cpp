@@ -9,6 +9,7 @@
 
 using namespace std;
 
+
 int main() {
     setlocale(0, "");
     const int maxLength = 100; // Максимальная длина строки
@@ -17,12 +18,12 @@ int main() {
     char str2[maxLength];
 
     // Запрос ввода первой строки
-    std::cout << "Введите первую строку: ";
-    std::cin.getline(str1, maxLength);
+    cout << "Введите первую строку: ";
+    cin.getline(str1, maxLength);
 
     // Запрос ввода второй строки
-    std::cout << "Введите вторую строку: ";
-    std::cin.getline(str2, maxLength);
+    cout << "Введите вторую строку: ";
+    cin.getline(str2, maxLength);
 
     int length1 = strlen(str1);
     int length2 = strlen(str2);
@@ -30,11 +31,11 @@ int main() {
     // Проверка длин строк и добавление содержимого одной строки к другой
     if (length1 >= length2) {
         strcat_s(str1, str2);
-        std::cout << "Результат: " << str1 << std::endl;
+        cout << "Результат: " << str1 << endl;
     }
     else {
         strcat_s(str2, str1);
-        std::cout << "Результат: " << str2 << std::endl;
+        cout << "Результат: " << str2 << endl;
     }
 
     return 0;

@@ -7,9 +7,7 @@ int main() {
 	system("cls"); // очищение консоли 
 	setlocale(0, ""); 
 
-	int x = 0;
-	int y = 0;
-	int z = 0;
+	int x, y ,z = 0;
 
 	std::cout << "¬ведите X: "; std::cin >> x;
 	std::cout << "¬ведите Y: "; std::cin >> y;

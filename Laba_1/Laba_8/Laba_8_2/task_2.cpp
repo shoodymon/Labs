@@ -49,11 +49,9 @@ int main() {
 	cout << "\n\tExtended Array: " << endl;
 	print_array(extended_array, 2 * row, column);
 
-	int min_value = find_min_element(arr, row, column);
-	cout << "\n\tMinimum value: " << min_value << endl;
+	cout << "\n\tMinimum value: " << find_min_element(arr, row, column) << endl;
 
-	int max_value = find_max_element(arr, row, column);
-	cout << "\n\tMaximum value:" << max_value << endl;
+	cout << "\n\tMaximum value:" << find_max_element(arr, row, column) << endl;
 
 	int** trans_array = create_transposed_array(arr, row, column);
 

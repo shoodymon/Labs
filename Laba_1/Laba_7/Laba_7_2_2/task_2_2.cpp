@@ -9,57 +9,36 @@
 
 using namespace std;
 
-/*
-   Структура UnionExample содержит два поля:
-   - data - это объединение (union) с именованными полями для хранения разных типов данных
-   - dataType - это целое число, которое будет использоваться для определения типа данных, хранящегося в объединении data.
-*/
-union Data {
-    int intValue;
-    double doubleValue;
-    char stringValue[20];
+struct Structure1 {
+    int value1;
+    char type_positive;
 };
 
-struct UnionExample {
-    Data data;
-    int dataType; // 0 for int, 1 for double, 2 for string
+struct Structure2 {
+    double value2;
+    char type_negative;
+};
+
+union Values {
+    Structure1 structure1;
+    Structure2 structure2;
 };
 
 int main() {
     setlocale(0, "");
+    const int LEN = 10;
 
-    // массив list из структур UnionExample с тремя элементами
-    UnionExample list[3];
+    Values arr[LEN];
 
-    // Для каждого элемента массива list задаем dataType, чтобы указать, какой тип данных мы хотим хранить в объединении data.
-    list[0].dataType = 0;
-    list[0].data.intValue = 42;
+    // Заполнение массива значениями для первой структуры
+    for (int i = 0; i < LEN; ++i) {
+        arr[i].structure1.value1 = i + 1;
+        arr[i].structure1.type_positive = '+';
+    }
 
-    list[1].dataType = 1;
-    list[1].data.doubleValue = 3.14;
-
-    list[2].dataType = 2;
-    strcpy_s(list[2].data.stringValue, "Hello, World!"); // так как поле data объединения Data имеет разные варианты типов данных 
-
-    /*
-        Для каждого элемента мы проверяем значение dataType и в зависимости от этого типа выводим данные, 
-        которые хранятся в объединении data.Выводимое сообщение зависит от типа данных, который мы хотим отобразить.    
-    */ 
-
-    for (int i = 0; i < 3; i++) {
-        switch (list[i].dataType) {
-        case 0:
-            cout << "Целое число: " << list[i].data.intValue << endl;
-            break;
-        case 1:
-            cout << "Десятичное число: " << list[i].data.doubleValue << endl;
-            break;
-        case 2:
-            cout << "Строка: " << list[i].data.stringValue << endl;
-            break;
-        default:
-            cout << "Неизвестный тип данных." << endl;
-        }
+    for (int i = 0; i < LEN; ++i) {
+        cout << "\n\tЭлемент " << i + 1 << ": ";
+        cout << "Тип: " << arr[i].structure1.type_positive << ", Значение: " << arr[i].structure1.value1 << endl;
     }
 
     return 0;

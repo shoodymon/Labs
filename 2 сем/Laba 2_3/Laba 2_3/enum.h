@@ -1,0 +1,13 @@
+#pragma once
+
+enum class Main_Menu {
+    VOID = NULL,
+    INPUT,
+    LINEAR_SEARCH,
+    JUMP_SEARCH,
+    INDEX_SEQUENTIAL_SEARCH,
+    BINARY_SEARCH,
+    BINARY_SEARCH_RECURSIVE,
+    OUTPUT,
+    EXIT
+};

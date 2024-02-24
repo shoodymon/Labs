@@ -10,9 +10,9 @@ using namespace std;
 
 struct Data {
     union {
-        int intValue;
-        float floatValue;
-        char charValue;
+        int int_value;
+        float float_value;
+        char char_value;
     };
 };
 
@@ -20,17 +20,17 @@ int main() {
     setlocale(0, "");
 
     Data data;
-    data.intValue = 10;
+    data.int_value = 10;
 
-    cout << "Int value: " << data.intValue << endl;
+    cout << "Int value: " << data.int_value << endl;
 
-    data.floatValue = 5.5;
+    data.float_value = 5.5;
 
-    cout << "Float value: " << data.floatValue << endl;
+    cout << "Float value: " << data.float_value << endl;
 
-    data.charValue = 'F';
+    data.char_value = 'F';
 
-    cout << "Char value: " << data.charValue << endl;
+    cout << "Char value: " << data.char_value << endl;
 
     return 0;
 }

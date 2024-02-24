@@ -40,15 +40,10 @@ struct Student {
 };
 
 void input(Student& student);
-
 void input(Student arr[], const int len);
-
 void sort(Student arr[], const int len);
-
 void print(Student student);
-
 void print(Student arr[], const int len);
-
 void printSearch(Student arr[], const int len, int number);
 
 int main() {
@@ -60,18 +55,12 @@ int main() {
     Student arr[LEN];
 
     cout << "\t\t   *Запись структур*" << endl;
-
-    // Ввод данных студентов
     input(arr, LEN);
 
     cout << "\n\t\t*Сортировка\*" << endl;
-
-    // Сортировка по ФИО
     sort(arr, LEN);
 
     cout << "\n\t\t  *Вывод всех записей*" << endl;
-
-    // Вывод всех записей
     print(arr, LEN);
 
     cout << "\n\t*Поиск*" << endl;

@@ -1,28 +1,16 @@
 #include <iostream>
 
-using namespace std;
-
 
 bool userStrcmp(char* str1, const char* str2);
-
 void userStrcpy(char* str1, const char* str2);
-
 void userStrncpy(char* str1, const char* str2, int n);
-
 void userStrncat(char* str1, const char* str2, int n);
-
 int userStrlen(const char* str);
-
 void userStrnset(char* str, char symbol, int n);
-
 bool userIsTheStringANumber(const char* str);
-
 bool userIsTheStringABinaryValue(const char* str);
-
 bool userIsTheStringAOctalValue(const char* str);
-
 bool userIsTheStringAHexadecimalValue(const char* str);
-
 int userAtoi(const char* str);
 
 int main() {

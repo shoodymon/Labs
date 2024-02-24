@@ -32,6 +32,7 @@ int main() {
     int arr[LEN] = {}; // Инициализация массива нулями
 
     input(arr, LEN);
+    cout << "Введённый массив: ";
     print(arr, LEN);
 
     cout << "Минимальное значение: " << min(arr, LEN) << endl;
@@ -41,11 +42,11 @@ int main() {
     cout << "Отсортированный массив: ";
     print(arr, LEN);
 
-    int sumValue = sum(arr, LEN);
-    cout << "Сумма значений: " << sumValue << endl;
+    int sum_value = sum(arr, LEN);
+    cout << "Сумма значений: " << sum_value << endl;
 
-    float avgValue = sr(arr, LEN);
-    cout << "Среднее значение: " << avgValue << endl;
+    float avg_value = sr(arr, LEN);
+    cout << "Среднее значение: " << avg_value << endl;
 
     return 0;
 }
@@ -60,7 +61,6 @@ void input(int arr[], int LEN) {
 
 // Вывод значений массива 
 void print(int arr[], int LEN) {
-    cout << "Элементы массива: ";
     for (int i = 0; i < LEN; i++) {
         cout << arr[i] << " ";
     }

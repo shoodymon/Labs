@@ -7,11 +7,7 @@ int main() {
 	system("cls");
 	setlocale(0, "");
 
-	int a = 0;
-	int b = 0;
-	int c = 0;
-	int d = 0;
-	int sum = 0;
+	int a, b, c, d, sum = 0;
 
 	std::cout << "¬ведите A: "; std::cin >> a;
 	std::cout << "¬ведите B: "; std::cin >> b;

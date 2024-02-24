@@ -36,11 +36,8 @@ int main() {
 		cin >> dyn_array[i];
 	}
 
-	int min_element = find_min_element(dyn_array, length);
-	cout << "Minimum element - " << min_element << endl;
-
-	int max_element = find_max_element(dyn_array, length);
-	cout << "Maximum element - " << max_element << endl;
+	cout << "Minimum element - " << find_min_element(dyn_array, length) << endl;
+	cout << "Maximum element - " << find_max_element(dyn_array, length) << endl;
 
 	// указатели на min и max элементы вручную
 	int* ptr_min = dyn_array;
@@ -54,8 +51,7 @@ int main() {
 			ptr_max = dyn_array + i;
 	}
 
-	int count = count_elements_between(ptr_min, ptr_max);
-	cout << "Elements between - " << count << endl;
+	cout << "Elements between - " << count_elements_between(ptr_min, ptr_max) << endl;
 
 	delete[] dyn_array;
 
