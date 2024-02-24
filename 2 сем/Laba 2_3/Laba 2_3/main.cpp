@@ -7,17 +7,18 @@ int main() {
 
     int choice = 0;
     bool flag = true;
+    bool flag2 = true;
     int size_arr = get_arr_size(); 
     vector <int> arr = fill_arr_with_random(size_arr);
+    int key = 0;
+    int step = 0;
     int search_value = 0;
-    int comparasion = 0;
-    int key = 10;
-    int step = 8;
-    int left = 12;
-    int right = 37;
-
+    const int left = 0;
+    const int right = arr.size() - 1;
 
     do {
+        print_arr(arr);
+        cout << endl;
         cout << "\n\t*Меню программы*\n";
         cout << "1) Ввод значения для поиска\n";
         cout << "2) Последовательный поиск\n";
@@ -30,14 +31,14 @@ int main() {
         cout << "\tВаш выбор --> ";	 cin >> choice;		cout << '\n' << '\n';
 
         switch (choice) {
-        case static_cast<int>(Main_Menu::INPUT):                    search_value = get_user_input();                                                break;
-        case static_cast<int>(Main_Menu::LINEAR_SEARCH):		    linear_search(arr, search_value, comparasion);	                                break;
-        case static_cast<int>(Main_Menu::JUMP_SEARCH):		        jump_search(arr, search_value, comparasion);		                            break;
-        case static_cast<int>(Main_Menu::INDEX_SEQUENTIAL_SEARCH):	index_sequential_search(arr, step, key, comparasion);		                    break;
-        case static_cast<int>(Main_Menu::BINARY_SEARCH):	        binary_search(arr, search_value, comparasion);			                        break;
-        case static_cast<int>(Main_Menu::BINARY_SEARCH_RECURSIVE):	binary_search_recursive(arr, search_value, left, right, comparasion);		    break;
-        case static_cast<int>(Main_Menu::OUTPUT):		            print_arr(arr);				                                                    break;
-        case static_cast<int>(Main_Menu::EXIT):			            exit(flag);		system("pause");                                                break;
+        case static_cast<int>(Main_Menu::INPUT):                    search_value = get_user_input();                                break;
+        case static_cast<int>(Main_Menu::LINEAR_SEARCH):		    linear_search(arr, search_value);	                            break;
+        case static_cast<int>(Main_Menu::JUMP_SEARCH):		        jump_search(arr, search_value);		                            break;
+        case static_cast<int>(Main_Menu::INDEX_SEQUENTIAL_SEARCH):	index_sequential_search(arr, step, key);		                break;
+        case static_cast<int>(Main_Menu::BINARY_SEARCH):	        binary_search(arr, search_value);			                    break;
+        case static_cast<int>(Main_Menu::BINARY_SEARCH_RECURSIVE):	binary_search_recursive(arr, search_value, left, right, flag2); break;
+        case static_cast<int>(Main_Menu::OUTPUT):		            print_arr(arr);				                                    break;
+        case static_cast<int>(Main_Menu::EXIT):			            exit(flag);		system("pause");                                break;
 
         default:	error();	break;
         }

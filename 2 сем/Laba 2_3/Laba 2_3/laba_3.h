@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include "enum.h"
 #include "func_algorithm.h"

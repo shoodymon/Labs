@@ -18,5 +18,7 @@ using std::min;
 
 int get_arr_size();
 vector<int> fill_arr_with_random(int size_arr);
-void print_arr(const vector<int>&arr);
-
+void print_arr(const vector<int>& arr);
+int get_user_input();
+int get_key();
+int get_step();

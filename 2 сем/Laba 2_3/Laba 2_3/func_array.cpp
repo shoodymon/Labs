@@ -1,4 +1,4 @@
-#include "func_algorithm.h"
+#include "func_array.h"
 
 int get_arr_size() {
 	int size_arr;
@@ -29,7 +29,7 @@ vector<int> fill_arr_with_random(int size_arr) {
 }
 
 void print_arr(const vector<int>& arr) {
-	cout << "—генерированный массив:\n";
+	cout << "\n\t—генерированный массив:\n";
 
 	for (int i = 0; i < arr.size(); i++) {
 		cout << arr[i] << " ";
@@ -44,4 +44,16 @@ int get_user_input() {
 	int value;
 	cout << "¬ведите значение дл€ поиска: ";	cin >> value;
 	return value;
+}
+
+int get_key() {
+	int key;
+	cout << "¬ведите ключ: ";	cin >> key;
+	return key;
+}
+
+int get_step() {
+	int step;
+	cout << "¬ведите размер шага: ";	cin >> step;
+	return step;
 }

@@ -1,9 +1,13 @@
 #include "func_algorithm.h"
+#include "func_array.h"
 
-int binary_search(const vector<int> &arr, int number, int& comparisons) {
+int binary_search(vector<int> &arr, int &number) {
     int left = 0;
     int right = arr.size() - 1;
-    comparisons = 0;
+    int comparisons = 0;
+    number = get_user_input();
+    sort(arr.begin(), arr.end());
+
 
     while (left <= right) {
         int middle = (left + right) / 2;

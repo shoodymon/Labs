@@ -15,11 +15,11 @@ using std::endl;
 using std::rand;
 using std::vector;
 using std::min;
+using std::sort;
 
 
-int get_user_input();
-int linear_search(const vector<int>& arr, int target, int& count);
-int jump_search(const vector<int>& arr, int target, int& comparisons);
-int index_sequential_search(const vector<int>& arr, int step, int key, int& comparisons);
-int binary_search(const vector<int>& arr, int number, int& comparisons);
-int binary_search_recursive(const vector<int>& arr, int number, int left, int right, int& comparisons);
+int linear_search(const vector<int>& arr, int &target);
+int jump_search(vector<int>& arr, int &target);
+int index_sequential_search(vector<int>& arr, int &step, int &key);
+int binary_search(vector<int>& arr, int &number);
+int binary_search_recursive(vector<int>& arr, int &number, const int &left, const int &right, bool &flag2);

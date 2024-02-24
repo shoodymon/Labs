@@ -1,7 +1,12 @@
 #include "func_algorithm.h"
+#include "func_array.h"
 
-int index_sequential_search(const vector<int>& arr, int step, int key, int& comparisons) {
+int index_sequential_search(vector<int>& arr, int &step, int &key) {
+    sort(arr.begin(), arr.end());
     vector<int> index_table;
+    int comparisons = 0;
+    key = get_key();
+    step = get_step();
 
     // Проходим по основному массиву данных с шагом и заполняем индексную таблицу
     for (int i = 0; i < arr.size(); i += step) {
