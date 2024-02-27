@@ -26,3 +26,4 @@ int get_user_input();
 int get_key();
 int get_step();
 int random(int min, int max);
+
