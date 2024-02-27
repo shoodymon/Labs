@@ -64,7 +64,7 @@ int main() {
     int width{};
     int min{};
     int max{};
-
+    
     int key = 0;
     int step = 0;
     int search_value = 0;
