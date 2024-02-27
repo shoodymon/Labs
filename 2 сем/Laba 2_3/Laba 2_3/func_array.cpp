@@ -1,13 +1,11 @@
 #include "func_array.h"
 
-/*
 int get_arr_size() {
 	int size_arr;
 	cout << "Введите размер массива (не меньше 100): ";	cin >> size_arr;
 	return size_arr;
-} */
+} 
 
-/*
 vector<int> fill_arr_with_random(int size_arr) {
 	vector<int> arr(size_arr);
 
@@ -23,16 +21,15 @@ vector<int> fill_arr_with_random(int size_arr) {
 		И вот - time(NULL) - означает взять текущее время. Что "решает" проблему генерирования разного seed.
 	*/
 
-/*
+
 	for (int i = 0; i < size_arr; i++) {
 		arr[i] = rand() % 100;              // инициализация случайными значениями от 0 до 99
 	}
 
 	return arr;
 }
-*/
 
-/*
+
 void print_arr(const vector<int>& arr) {
 	cout << "\n\tСгенерированный массив:\n";
 
@@ -44,7 +41,6 @@ void print_arr(const vector<int>& arr) {
 			cout << endl;
 	}
 }
-*/
 
 int get_user_input() {
 	int value;
@@ -64,6 +60,7 @@ int get_step() {
 	return step;
 }
 
+/*
 int random(int min, int max){
 	int number = min + rand() % (max - min + 1);
 	return number;
@@ -104,4 +101,4 @@ void print_arr(vector<int> const &arr, int len) {
 		counter++;
 	}
 }
-
+*/

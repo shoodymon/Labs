@@ -47,6 +47,7 @@ int index_sequential_search(vector<int>& arr, int &step, int &key) {
             }
         }
     }
+
     */
     // Определяем блок, в котором должен находиться ключ
     int block_index = 0;

@@ -1,5 +1,5 @@
 ﻿#include "laba_3.h"
-/*
+
 int main() {
     setlocale(0, "");
     system("chcp 1251");
@@ -46,8 +46,8 @@ int main() {
 
     return 0;
 }
-*/
 
+/*
 int main() {
     setlocale(0, "");
     system("cls");
@@ -102,8 +102,8 @@ int main() {
 
         default:	                                                    error();	                                                    break;
         }
-    } while (flag);
+    } while (flag); 
 
     return 0;
 }
-
+*/
