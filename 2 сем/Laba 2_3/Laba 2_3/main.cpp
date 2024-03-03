@@ -8,8 +8,8 @@ int main() {
     int choice = 0;
     bool flag = true;
     bool flag2 = true;
-    int size_arr = get_arr_size(); 
-    vector <int> arr = fill_arr_with_random(size_arr);
+    vector <int> arr{};
+    fill_arr_with_random(arr);
     int key = 0;
     int step = 0;
     int search_value = 0;
@@ -20,18 +20,16 @@ int main() {
         print_arr(arr);
         cout << endl;
         cout << "\n\t*Меню программы*\n";
-        cout << "1) Ввод значения для поиска\n";
-        cout << "2) Последовательный поиск\n";
-        cout << "3) Поиск прыжками\n";
-        cout << "4) Индексно-последовательный поиск\n";
-        cout << "5) Бинарный поиск\n";
-        cout << "6) Бинарный поиск через рекурсию\n";
-        cout << "7) Вывод массива\n";
-        cout << "8) Завершение программы\n\n";
+        cout << "1) Последовательный поиск\n";
+        cout << "2) Поиск прыжками\n";
+        cout << "3) Индексно-последовательный поиск\n";
+        cout << "4) Бинарный поиск\n";
+        cout << "5) Бинарный поиск через рекурсию\n";
+        cout << "6) Вывод массива\n";
+        cout << "7) Завершение программы\n\n";
         cout << "\tВаш выбор --> ";	 cin >> choice;		cout << '\n' << '\n';
 
         switch (choice) {
-        case static_cast<int>(Main_Menu::INPUT):                    search_value = get_user_input();                                break;
         case static_cast<int>(Main_Menu::LINEAR_SEARCH):		    linear_search(arr, search_value);	                            break;
         case static_cast<int>(Main_Menu::JUMP_SEARCH):		        jump_search(arr, search_value);		                            break;
         case static_cast<int>(Main_Menu::INDEX_SEQUENTIAL_SEARCH):	index_sequential_search(arr, step, key);		                break;

@@ -2,8 +2,8 @@
 
 #include <iostream>
 #include <vector>
-#include <cstdlib> // Для функций rand() и srand()
-#include <ctime>   // Для функции time()
+#include <cstdlib> // rand() и srand()
+#include <ctime>   // time()
 #include <algorithm>
 #include <cmath>
 
@@ -23,7 +23,4 @@ void print_arr(const vector<int>& arr);
 // void fill_arr_with_random(vector<int>& arr, int& min, int& max);
 // void print_arr(vector<int> const& arr, int len);
 int get_user_input();
-int get_key();
-int get_step();
 // int random(int min, int max);
-

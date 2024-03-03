@@ -63,8 +63,8 @@ int index_sequential_search(vector<int>& arr, int &step, int &key) {
 
     // Перебираем элементы индексного массива
     for (int i = 0; i < index_table.size(); i++) {
-        int start_index = index_table[i]; // Начальный индекс блока
-        int end_index = min<int>(start_index + step, 100); // Конечный индекс блока
+        int start_index = block_index * step; // Начальный индекс блока
+        int end_index = min<int>(start_index + step, arr.size()); // Конечный индекс блока
 
         cout << "start_index = " << start_index << endl;
         cout << "end_index = " << end_index << endl;

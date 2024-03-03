@@ -1,10 +1,10 @@
-#include "func_array.h"
+#include "array_functions.h"
 
 int get_arr_size() {
 	int size_arr;
 	cout << "¬ведите размер массива (не меньше 100): ";	cin >> size_arr;
 	return size_arr;
-} 
+}
 
 void fill_arr_with_random(vector<int>& arr) {
 
@@ -46,17 +46,6 @@ int get_user_input() {
 	return value;
 }
 
-int get_key() {
-	int key;
-	cout << "¬ведите элемент дл€ поиска: ";	cin >> key;
-	return key;
-}
-
-int get_step() {
-	int step;
-	cout << "¬ведите размер шага: ";	cin >> step;
-	return step;
-}
 
 /*
 int random(int min, int max){

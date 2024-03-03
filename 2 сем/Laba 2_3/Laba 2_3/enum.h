@@ -1,8 +1,7 @@
 #pragma once
 
 enum class Main_Menu {
-    VOID = NULL,
-    INPUT,
+    VOID,
     LINEAR_SEARCH,
     JUMP_SEARCH,
     INDEX_SEQUENTIAL_SEARCH,
