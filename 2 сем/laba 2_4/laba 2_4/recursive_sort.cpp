@@ -41,7 +41,7 @@ void recursive_sort(vector<int>& arr, int left, int right) {
 } 
 */
 
-int find_min_index(vector<int> arr, int left, int right, Actions& result) {
+int find_min_index(vector<int>& arr, int left, int right, Actions& result) {
     int min_index = left; // Предполагаем, что минимальный элемент - это arr[i]
 
     // Идем по оставшимся элементам и обновляем min_index, если находим элемент меньше текущего минимального
@@ -55,9 +55,7 @@ int find_min_index(vector<int> arr, int left, int right, Actions& result) {
     return min_index;
 }
 
-void recursive_sort(vector<int> arr, int size, bool is_sorted, int index, Actions& result) {
-    //steady_clock::time_point start_time = start_timer();
-
+void recursive_sort(vector<int>& arr, int size, bool is_sorted, int index, Actions& result) {
     int min_index = 0;
 
     // Выводим массив, когда index и size будут одинаковыми
@@ -77,15 +75,13 @@ void recursive_sort(vector<int> arr, int size, bool is_sorted, int index, Action
 
     // Рекурсивный вызов функции сортировки
     recursive_sort(arr, size, is_sorted, index + 1, result);
-
-    //steady_clock::time_point end_time = end_timer();
-    //cout << "Время рекурсивной сортировки: " << duration_time(start_time, end_time) << " микросекунд" << endl;
 }
 
-void recursive_sort_with_timer(vector<int>& arr, Actions& result) {
+void recursive_sort_with_timer(vector<int>& arr, int size, Actions& result) {
     steady_clock::time_point start_time = start_timer();
-    recursive_sort(arr, 0, arr.size() - 1, 0, result);
+    recursive_sort(arr, size, false, 0, result);
     steady_clock::time_point end_time = end_timer();
+    print_sorted_arr(arr);
     cout << "Время рекурсивной сортировки: " << duration_time(start_time, end_time) << " микросекунд" << endl;
     cout << "Сравнений: " << result.comparisons << endl;
     cout << "Перестановок: " << result.swaps << endl;

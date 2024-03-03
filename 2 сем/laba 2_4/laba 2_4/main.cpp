@@ -43,9 +43,9 @@ int main() {
         case static_cast<int>(Main_Menu::INSERTS_SORT):	    inserts_sort(arr, size, result);	                    break;
         case static_cast<int>(Main_Menu::SELECTION_SORT):	selection_sort(arr, size, result);                      break;
         case static_cast<int>(Main_Menu::SHELL_SORT):       shell_sort(arr, size, result);                          break;
-        case static_cast<int>(Main_Menu::RECURSIVE_SORT):   recursive_sort_with_timer(arr, result);                 break;
-        case static_cast<int>(Main_Menu::HOARA_SORT):       hoara_sort_with_timer(arr);                     break;
-        case static_cast<int>(Main_Menu::MERGING_SORT):     merging_sort(arr, size);                        break;
+        case static_cast<int>(Main_Menu::RECURSIVE_SORT):   recursive_sort_with_timer(arr, size, result);           break;
+        case static_cast<int>(Main_Menu::HOARA_SORT):       hoara_sort_with_timer(arr, result);                     break;
+        case static_cast<int>(Main_Menu::MERGING_SORT):     merging_sort(arr, size, result);                        break;
         case static_cast<int>(Main_Menu::OUTPUT):		    print_arr(arr);				                            break;
         case static_cast<int>(Main_Menu::EXIT):			    exit(flag);		system("pause");                        break;
 

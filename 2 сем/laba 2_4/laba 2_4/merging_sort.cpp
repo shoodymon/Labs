@@ -1,7 +1,7 @@
 ﻿#include "sort_functions.h"
 
 // Функция для слияния двух отсортированных подмассивов [left, middle] и [middle+1, right] в один отсортированный массив arr[left, right]
-void merge(vector<int>& arr, int left, int middle, int right) {
+void merge(vector<int>& arr, int left, int middle, int right, Actions& result) {
     // Вычисляем размеры двух подмассивов
     int size1 = middle - left + 1;
     int size2 = right - middle;
@@ -20,13 +20,16 @@ void merge(vector<int>& arr, int left, int middle, int right) {
 
     // Слияние двух временных массивов в один основной массив
     while (i < size1 && j < size2) {
+        result.comparisons++;
         if (left_arr.at(i) <= right_arr.at(j)) {
             arr.at(k) = left_arr.at(i);
             i++;
+            result.swaps++;
         }
         else {
             arr.at(k) = right_arr.at(j);
             j++;
+            result.swaps++;
         }
         k++;
     }
@@ -36,6 +39,7 @@ void merge(vector<int>& arr, int left, int middle, int right) {
         arr.at(k) = left_arr.at(i);
         i++;
         k++;
+        result.swaps++;
     }
 
     // Дописываем оставшиеся элементы из правого временного массива, если такие есть
@@ -43,11 +47,12 @@ void merge(vector<int>& arr, int left, int middle, int right) {
         arr.at(k) = right_arr.at(j);
         j++;
         k++;
+        result.swaps++;
     }
 }
 
 // Функция сортировки слиянием
-void merging_sort(vector<int>& arr, int len) {
+void merging_sort(vector<int>& arr, int len, Actions& result) {
     steady_clock::time_point start_time = start_timer();
 
     int current_size;
@@ -62,10 +67,13 @@ void merging_sort(vector<int>& arr, int len) {
             int right_end = min(left_start + 2 * current_size - 1, len - 1);
 
             // Вызываем функцию слияния для текущих подмассивов
-            merge(arr, left_start, middle, right_end);
+            merge(arr, left_start, middle, right_end, result);
         }
     }
 
     steady_clock::time_point end_time = end_timer();
+    print_sorted_arr(arr);
     cout << "Время сортировки слиянием: " << duration_time(start_time, end_time) << " микросекунд" << endl;
+    cout << "Сравнений: " << result.comparisons << endl;
+    cout << "Перестановок: " << result.swaps << endl;
 }
