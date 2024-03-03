@@ -10,15 +10,16 @@ int main() {
     bool flag = true;
     bool is_sorted = false;
     int size = get_arr_size();
-    vector <int> arr{};
-    fill_arr_with_random(arr);
+    vector <int> origional_arr{};
+    fill_arr_with_random(origional_arr);
     int left = 0;
-    int right = arr.size() - 1;
+    int right = origional_arr.size() - 1;
     int middle = (left + right) / 2;
     int index = 0;
     Actions result = { 0, 0 };
 
     do {
+        vector<int> arr = origional_arr;
         print_arr(arr);
         cout << endl;
         cout << "\n\t------------Меню программы------------\n";

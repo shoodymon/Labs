@@ -40,6 +40,18 @@ void print_arr(const vector<int>& arr) {
 	}
 }
 
+void print_sorted_arr(vector<int>& arr) {
+	cout << "\n\tОтсортированный массив:\n";
+
+	for (int i = 0; i < arr.size(); i++) {
+		cout << arr[i] << " ";
+
+		// Переход на новую строку после каждых 10 элементов
+		if ((i + 1) % 10 == 0)
+			cout << endl;
+	}
+}
+
 int get_user_input() {
 	int value;
 	cout << "Введите значение для поиска: ";	cin >> value;

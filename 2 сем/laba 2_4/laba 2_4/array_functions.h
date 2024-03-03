@@ -19,6 +19,7 @@ using std::min;
 int get_arr_size();
 void fill_arr_with_random(vector<int>& arr);
 void print_arr(const vector<int>& arr);
+void print_sorted_arr(vector<int>& arr);
 // void get_len_and_volume(vector<int>& arr, int& len, int& width);
 // void fill_arr_with_random(vector<int>& arr, int& min, int& max);
 // void print_arr(vector<int> const& arr, int len);

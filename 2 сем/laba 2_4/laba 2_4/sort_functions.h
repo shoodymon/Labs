@@ -9,6 +9,7 @@
 #include "enum.h"
 #include "additional_functions.h"
 #include "struct.h"
+#include "array_functions.h"
 
 
 using std::cin;

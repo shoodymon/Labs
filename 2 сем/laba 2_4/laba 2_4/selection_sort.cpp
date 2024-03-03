@@ -16,6 +16,7 @@ void selection_sort(vector<int>& arr, int size, Actions& result) {
 	}
 
 	steady_clock::time_point end_time = end_timer();
+	print_sorted_arr(arr);
 	cout << "Время сортировки выбором: " << duration_time(start_time, end_time) << " микросекунд" << endl;
 	cout << "Сравнений: " << result.comparisons << endl;
 	cout << "Перестановок: " << result.swaps << endl;
