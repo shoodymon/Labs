@@ -76,4 +76,5 @@ void merging_sort(vector<int>& arr, int len, Actions& result) {
     cout << "Время сортировки слиянием: " << duration_time(start_time, end_time) << " микросекунд" << endl;
     cout << "Сравнений: " << result.comparisons << endl;
     cout << "Перестановок: " << result.swaps << endl;
+    reset(result);
 }

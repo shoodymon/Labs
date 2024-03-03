@@ -1,4 +1,4 @@
-﻿#include "additional_functions.h"
+﻿#include "laba_4.h"
 
 
 void exit(bool& flag) {
@@ -8,6 +8,11 @@ void exit(bool& flag) {
 
 void error() {
 	cout << "Ошибка!\n\n";
+}
+
+void reset(Actions& result) {
+	result.comparisons = 0;
+	result.swaps = 0;
 }
 
 // Функция начинает отсчет времени

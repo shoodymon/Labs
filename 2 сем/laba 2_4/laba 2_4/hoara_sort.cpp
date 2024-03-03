@@ -45,4 +45,5 @@ void hoara_sort_with_timer(vector<int>& arr, Actions& result) {
     cout << "Время сортировки Хоара: " << duration_time(start_time, end_time) << " микросекунд" << endl;
     cout << "Сравнений: " << result.comparisons << endl;
     cout << "Перестановок: " << result.swaps << endl;
+    reset(result);
 }

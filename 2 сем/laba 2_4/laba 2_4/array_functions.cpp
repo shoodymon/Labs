@@ -50,6 +50,7 @@ void print_sorted_arr(vector<int>& arr) {
 		if ((i + 1) % 10 == 0)
 			cout << endl;
 	}
+	cout << endl;
 }
 
 int get_user_input() {

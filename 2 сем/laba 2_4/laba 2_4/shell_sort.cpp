@@ -18,4 +18,5 @@ void shell_sort(vector<int>& arr, int size, Actions& result) {
 	cout << "Время сортировки Шелла: " << duration_time(start_time, end_time) << " микросекунд" << endl;
 	cout << "Сравнений: " << result.comparisons << endl;
 	cout << "Перестановок: " << result.swaps << endl;
+	reset(result);
 }

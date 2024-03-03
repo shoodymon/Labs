@@ -85,4 +85,5 @@ void recursive_sort_with_timer(vector<int>& arr, int size, Actions& result) {
     cout << "Время рекурсивной сортировки: " << duration_time(start_time, end_time) << " микросекунд" << endl;
     cout << "Сравнений: " << result.comparisons << endl;
     cout << "Перестановок: " << result.swaps << endl;
+    reset(result);
 }

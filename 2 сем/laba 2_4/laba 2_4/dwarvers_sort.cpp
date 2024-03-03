@@ -23,4 +23,5 @@ void dwarves_sort(vector<int>& arr, int size, Actions& result) {
 	cout << "Время гномьей сортировки: " << duration_time(start_time, end_time) << " микросекунд" << endl;
 	cout << "Сравнений: " << result.comparisons << endl;
 	cout << "Перестановок: " << result.swaps << endl;
+	reset(result);
 }
