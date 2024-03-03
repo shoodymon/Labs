@@ -1,4 +1,4 @@
-#include "sort_functions.h"
+п»ї#include "sort_functions.h"
 
 void shaker_sort(vector<int>& arr, int size, Actions& result) {
     steady_clock::time_point start_time = start_timer();
@@ -10,7 +10,7 @@ void shaker_sort(vector<int>& arr, int size, Actions& result) {
     while (swapped) {
         swapped = false;
 
-        // Проход слева направо
+        // РџСЂРѕС…РѕРґ СЃР»РµРІР° РЅР°РїСЂР°РІРѕ
         for (int i = start; i < end; ++i) {
             if (arr.at(i) > arr.at(i + 1)) {
                 swap(arr.at(i), arr.at(i + 1));
@@ -20,15 +20,15 @@ void shaker_sort(vector<int>& arr, int size, Actions& result) {
             result.comparisons++;
         }
 
-        if (!swapped) // Если не было перестановок, то массив уже отсортирован
+        if (!swapped) // Р•СЃР»Рё РЅРµ Р±С‹Р»Рѕ РїРµСЂРµСЃС‚Р°РЅРѕРІРѕРє, С‚Рѕ РјР°СЃСЃРёРІ СѓР¶Рµ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅ
             break;
 
         swapped = false;
 
-        // Уменьшаем правую границу
+        // РЈРјРµРЅСЊС€Р°РµРј РїСЂР°РІСѓСЋ РіСЂР°РЅРёС†Сѓ
         --end;
 
-        // Проход справа налево
+        // РџСЂРѕС…РѕРґ СЃРїСЂР°РІР° РЅР°Р»РµРІРѕ
         for (int i = end - 1; i >= start; --i) {
             if (arr.at(i) > arr.at(i + 1)) {
                 swap(arr.at(i), arr.at(i + 1));
@@ -38,12 +38,12 @@ void shaker_sort(vector<int>& arr, int size, Actions& result) {
             result.comparisons++;
         }
 
-        // Увеличиваем левую границу
+        // РЈРІРµР»РёС‡РёРІР°РµРј Р»РµРІСѓСЋ РіСЂР°РЅРёС†Сѓ
         ++start;
     }
 
     steady_clock::time_point end_time = end_timer();
-    cout << "Время шейкерной сортировки: " << duration_time(start_time, end_time) << " микросекунд" << endl;
-    cout << "Сравнений: " << result.comparisons << endl;
-    cout << "Перестановок: " << result.swaps << endl;
+    cout << "Р’СЂРµРјСЏ С€РµР№РєРµСЂРЅРѕР№ СЃРѕСЂС‚РёСЂРѕРІРєРё: " << duration_time(start_time, end_time) << " РјРёРєСЂРѕСЃРµРєСѓРЅРґ" << endl;
+    cout << "РЎСЂР°РІРЅРµРЅРёР№: " << result.comparisons << endl;
+    cout << "РџРµСЂРµСЃС‚Р°РЅРѕРІРѕРє: " << result.swaps << endl;
 }

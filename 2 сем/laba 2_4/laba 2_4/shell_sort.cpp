@@ -1,4 +1,4 @@
-#include "sort_functions.h"
+ï»¿#include "sort_functions.h"
 
 void shell_sort(vector<int>& arr, int size, Actions& result) {
 	steady_clock::time_point start_time = start_timer();
@@ -14,7 +14,7 @@ void shell_sort(vector<int>& arr, int size, Actions& result) {
 	}
 
 	steady_clock::time_point end_time = end_timer();
-	cout << "Âðåìÿ ñîðòèðîâêè Øåëëà: " << duration_time(start_time, end_time) << " ìèêðîñåêóíä" << endl;
-	cout << "Ñðàâíåíèé: " << result.comparisons << endl;
-	cout << "Ïåðåñòàíîâîê: " << result.swaps << endl;
+	cout << "Ð’Ñ€ÐµÐ¼Ñ ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ¸ Ð¨ÐµÐ»Ð»Ð°: " << duration_time(start_time, end_time) << " Ð¼Ð¸ÐºÑ€Ð¾ÑÐµÐºÑƒÐ½Ð´" << endl;
+	cout << "Ð¡Ñ€Ð°Ð²Ð½ÐµÐ½Ð¸Ð¹: " << result.comparisons << endl;
+	cout << "ÐŸÐµÑ€ÐµÑÑ‚Ð°Ð½Ð¾Ð²Ð¾Ðº: " << result.swaps << endl;
 }

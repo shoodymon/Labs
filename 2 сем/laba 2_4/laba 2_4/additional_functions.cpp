@@ -1,26 +1,26 @@
-#include "additional_functions.h"
+ï»¿#include "additional_functions.h"
 
 
 void exit(bool& flag) {
-	cout << "\tÇàâåðøåíèå ïðîãðàìììû...\n";
+	cout << "\tÐ—Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð¸Ðµ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð¼Ñ‹...\n";
 	flag = false;
 }
 
 void error() {
-	cout << "Îøèáêà!\n\n";
+	cout << "ÐžÑˆÐ¸Ð±ÐºÐ°!\n\n";
 }
 
-// Ôóíêöèÿ íà÷èíàåò îòñ÷åò âðåìåíè
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð½Ð°Ñ‡Ð¸Ð½Ð°ÐµÑ‚ Ð¾Ñ‚ÑÑ‡ÐµÑ‚ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸
 steady_clock::time_point start_timer() {
 	return steady_clock::now();
 }
 
-// Ôóíêöèÿ çàêàí÷èâàåò îòñ÷åò âðåìåíè
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð·Ð°ÐºÐ°Ð½Ñ‡Ð¸Ð²Ð°ÐµÑ‚ Ð¾Ñ‚ÑÑ‡ÐµÑ‚ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸
 steady_clock::time_point end_timer() {
 	return steady_clock::now();
 }
 
-// Ôóíêöèÿ ñ÷èòàåò ðàçíèöó âî âðåìåíè
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ ÑÑ‡Ð¸Ñ‚Ð°ÐµÑ‚ Ñ€Ð°Ð·Ð½Ð¸Ñ†Ñƒ Ð²Ð¾ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸
 long duration_time(steady_clock::time_point start, steady_clock::time_point end) {
 	return duration_cast<microseconds>(end - start).count();
 }

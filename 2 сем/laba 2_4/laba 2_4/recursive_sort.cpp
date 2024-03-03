@@ -1,40 +1,40 @@
-#include "laba_4.h"
+п»ї#include "laba_4.h"
 
 /*
 void recursive_sort(vector<int>& arr, int left, int right) {
-    int pivot; // разрешающий элемент
-    int index; // индекс разрешающего элемента
-    int l_hold = left; //левая граница
-    int r_hold = right; // правая граница
+    int pivot; // СЂР°Р·СЂРµС€Р°СЋС‰РёР№ СЌР»РµРјРµРЅС‚
+    int index; // РёРЅРґРµРєСЃ СЂР°Р·СЂРµС€Р°СЋС‰РµРіРѕ СЌР»РµРјРµРЅС‚Р°
+    int l_hold = left; //Р»РµРІР°СЏ РіСЂР°РЅРёС†Р°
+    int r_hold = right; // РїСЂР°РІР°СЏ РіСЂР°РЅРёС†Р°
     pivot = arr.at(left);
 
-    // пока границы не сомкнутся
+    // РїРѕРєР° РіСЂР°РЅРёС†С‹ РЅРµ СЃРѕРјРєРЅСѓС‚СЃСЏ
     while (left < right) {
         while ((arr.at(right) > pivot) && (left < right))
-            right--; // сдвигаем правую границу пока элемент [right] больше [pivot]
+            right--; // СЃРґРІРёРіР°РµРј РїСЂР°РІСѓСЋ РіСЂР°РЅРёС†Сѓ РїРѕРєР° СЌР»РµРјРµРЅС‚ [right] Р±РѕР»СЊС€Рµ [pivot]
 
-        // если границы не сомкнулись
+        // РµСЃР»Рё РіСЂР°РЅРёС†С‹ РЅРµ СЃРѕРјРєРЅСѓР»РёСЃСЊ
         if (left != right) {
-            arr.at(left) = arr.at(right); // перемещаем элемент [right] на место разрешающего
-            left++; // сдвигаем левую границу вправо
+            arr.at(left) = arr.at(right); // РїРµСЂРµРјРµС‰Р°РµРј СЌР»РµРјРµРЅС‚ [right] РЅР° РјРµСЃС‚Рѕ СЂР°Р·СЂРµС€Р°СЋС‰РµРіРѕ
+            left++; // СЃРґРІРёРіР°РµРј Р»РµРІСѓСЋ РіСЂР°РЅРёС†Сѓ РІРїСЂР°РІРѕ
         }
 
         while ((arr.at(left) < pivot) && (left < right))
-            left++; // сдвигаем левую границу пока элемент [left] меньше [pivot]
+            left++; // СЃРґРІРёРіР°РµРј Р»РµРІСѓСЋ РіСЂР°РЅРёС†Сѓ РїРѕРєР° СЌР»РµРјРµРЅС‚ [left] РјРµРЅСЊС€Рµ [pivot]
 
-        // если границы не сомкнулись
+        // РµСЃР»Рё РіСЂР°РЅРёС†С‹ РЅРµ СЃРѕРјРєРЅСѓР»РёСЃСЊ
         if (left != right) { 
-            arr.at(right) = arr.at(left); // перемещаем элемент [left] на место [right]
-            right--; // сдвигаем правую границу влево
+            arr.at(right) = arr.at(left); // РїРµСЂРµРјРµС‰Р°РµРј СЌР»РµРјРµРЅС‚ [left] РЅР° РјРµСЃС‚Рѕ [right]
+            right--; // СЃРґРІРёРіР°РµРј РїСЂР°РІСѓСЋ РіСЂР°РЅРёС†Сѓ РІР»РµРІРѕ
         }
     }
 
-    arr.at(left) = pivot; // ставим разрешающий элемент на место
+    arr.at(left) = pivot; // СЃС‚Р°РІРёРј СЂР°Р·СЂРµС€Р°СЋС‰РёР№ СЌР»РµРјРµРЅС‚ РЅР° РјРµСЃС‚Рѕ
     index = left;
     left = l_hold;
     right = r_hold;
 
-    if (left < index) // Рекурсивно вызываем сортировку для левой и правой части массива
+    if (left < index) // Р РµРєСѓСЂСЃРёРІРЅРѕ РІС‹Р·С‹РІР°РµРј СЃРѕСЂС‚РёСЂРѕРІРєСѓ РґР»СЏ Р»РµРІРѕР№ Рё РїСЂР°РІРѕР№ С‡Р°СЃС‚Рё РјР°СЃСЃРёРІР°
         recursive_sort(arr, left, index - 1);
     if (right > index)
         recursive_sort(arr, index + 1, right);
@@ -42,9 +42,9 @@ void recursive_sort(vector<int>& arr, int left, int right) {
 */
 
 int find_min_index(vector<int> arr, int left, int right, Actions& result) {
-    int min_index = left; // Предполагаем, что минимальный элемент - это arr[i]
+    int min_index = left; // РџСЂРµРґРїРѕР»Р°РіР°РµРј, С‡С‚Рѕ РјРёРЅРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ - СЌС‚Рѕ arr[i]
 
-    // Идем по оставшимся элементам и обновляем min_index, если находим элемент меньше текущего минимального
+    // РРґРµРј РїРѕ РѕСЃС‚Р°РІС€РёРјСЃСЏ СЌР»РµРјРµРЅС‚Р°Рј Рё РѕР±РЅРѕРІР»СЏРµРј min_index, РµСЃР»Рё РЅР°С…РѕРґРёРј СЌР»РµРјРµРЅС‚ РјРµРЅСЊС€Рµ С‚РµРєСѓС‰РµРіРѕ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ
     for (int k = left + 1; k < right; k++) {
         result.comparisons++;
         if (arr[k] < arr[min_index]) {
@@ -60,33 +60,33 @@ void recursive_sort(vector<int> arr, int size, bool is_sorted, int index, Action
 
     int min_index = 0;
 
-    // Выводим массив, когда index и size будут одинаковыми
+    // Р’С‹РІРѕРґРёРј РјР°СЃСЃРёРІ, РєРѕРіРґР° index Рё size Р±СѓРґСѓС‚ РѕРґРёРЅР°РєРѕРІС‹РјРё
     if (index == size) {
         is_sorted = true;
         return;
     }
 
-    // Вызов функции min_index для получения минимального индекса
+    // Р’С‹Р·РѕРІ С„СѓРЅРєС†РёРё min_index РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ РёРЅРґРµРєСЃР°
     min_index = find_min_index(arr, index, size, result);
 
-    // Меняем местами, когда индекс и минимальный индекс не совпадают
+    // РњРµРЅСЏРµРј РјРµСЃС‚Р°РјРё, РєРѕРіРґР° РёРЅРґРµРєСЃ Рё РјРёРЅРёРјР°Р»СЊРЅС‹Р№ РёРЅРґРµРєСЃ РЅРµ СЃРѕРІРїР°РґР°СЋС‚
     if (min_index != index) {
         swap(arr[min_index], arr[index]);
         result.swaps++;
     }
 
-    // Рекурсивный вызов функции сортировки
+    // Р РµРєСѓСЂСЃРёРІРЅС‹Р№ РІС‹Р·РѕРІ С„СѓРЅРєС†РёРё СЃРѕСЂС‚РёСЂРѕРІРєРё
     recursive_sort(arr, size, is_sorted, index + 1, result);
 
     //steady_clock::time_point end_time = end_timer();
-    //cout << "Время рекурсивной сортировки: " << duration_time(start_time, end_time) << " микросекунд" << endl;
+    //cout << "Р’СЂРµРјСЏ СЂРµРєСѓСЂСЃРёРІРЅРѕР№ СЃРѕСЂС‚РёСЂРѕРІРєРё: " << duration_time(start_time, end_time) << " РјРёРєСЂРѕСЃРµРєСѓРЅРґ" << endl;
 }
 
 void recursive_sort_with_timer(vector<int>& arr, Actions& result) {
     steady_clock::time_point start_time = start_timer();
     recursive_sort(arr, 0, arr.size() - 1, 0, result);
     steady_clock::time_point end_time = end_timer();
-    cout << "Время рекурсивной сортировки: " << duration_time(start_time, end_time) << " микросекунд" << endl;
-    cout << "Сравнений: " << result.comparisons << endl;
-    cout << "Перестановок: " << result.swaps << endl;
+    cout << "Р’СЂРµРјСЏ СЂРµРєСѓСЂСЃРёРІРЅРѕР№ СЃРѕСЂС‚РёСЂРѕРІРєРё: " << duration_time(start_time, end_time) << " РјРёРєСЂРѕСЃРµРєСѓРЅРґ" << endl;
+    cout << "РЎСЂР°РІРЅРµРЅРёР№: " << result.comparisons << endl;
+    cout << "РџРµСЂРµСЃС‚Р°РЅРѕРІРѕРє: " << result.swaps << endl;
 }

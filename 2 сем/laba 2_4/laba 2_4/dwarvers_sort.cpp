@@ -1,4 +1,4 @@
-#include "sort_functions.h"
+ï»¿#include "sort_functions.h"
 
 void dwarves_sort(vector<int>& arr, int size, Actions& result) {
 	steady_clock::time_point start_time = start_timer();
@@ -19,7 +19,7 @@ void dwarves_sort(vector<int>& arr, int size, Actions& result) {
 	}
 
 	steady_clock::time_point end_time = end_timer();
-	cout << "Âðåìÿ ãíîìüåé ñîðòèðîâêè: " << duration_time(start_time, end_time) << " ìèêðîñåêóíä" << endl;
-	cout << "Ñðàâíåíèé: " << result.comparisons << endl;
-	cout << "Ïåðåñòàíîâîê: " << result.swaps << endl;
+	cout << "Ð’Ñ€ÐµÐ¼Ñ Ð³Ð½Ð¾Ð¼ÑŒÐµÐ¹ ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ¸: " << duration_time(start_time, end_time) << " Ð¼Ð¸ÐºÑ€Ð¾ÑÐµÐºÑƒÐ½Ð´" << endl;
+	cout << "Ð¡Ñ€Ð°Ð²Ð½ÐµÐ½Ð¸Ð¹: " << result.comparisons << endl;
+	cout << "ÐŸÐµÑ€ÐµÑÑ‚Ð°Ð½Ð¾Ð²Ð¾Ðº: " << result.swaps << endl;
 }
