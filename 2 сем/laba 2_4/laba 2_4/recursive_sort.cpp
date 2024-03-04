@@ -1,7 +1,6 @@
 ﻿#include "laba_4.h"
 
-/*
-void recursive_sort(vector<int>& arr, int left, int right) {
+void recursive_sort(vector<int>& arr, int left, int right, Actions& result) {
     int pivot; // разрешающий элемент
     int index; // индекс разрешающего элемента
     int l_hold = left; //левая граница
@@ -10,21 +9,27 @@ void recursive_sort(vector<int>& arr, int left, int right) {
 
     // пока границы не сомкнутся
     while (left < right) {
-        while ((arr.at(right) > pivot) && (left < right))
+        while ((arr.at(right) > pivot) && (left < right)) {
+            result.comparisons++; // увеличиваем счетчик сравнений
             right--; // сдвигаем правую границу пока элемент [right] больше [pivot]
+        }
 
         // если границы не сомкнулись
         if (left != right) {
             arr.at(left) = arr.at(right); // перемещаем элемент [right] на место разрешающего
+            result.swaps++; // увеличиваем счетчик перестановок
             left++; // сдвигаем левую границу вправо
         }
 
-        while ((arr.at(left) < pivot) && (left < right))
+        while ((arr.at(left) < pivot) && (left < right)) {
+            result.comparisons++; // увеличиваем счетчик сравнений
             left++; // сдвигаем левую границу пока элемент [left] меньше [pivot]
+        }
 
         // если границы не сомкнулись
-        if (left != right) { 
+        if (left != right) {
             arr.at(right) = arr.at(left); // перемещаем элемент [left] на место [right]
+            result.swaps++; // увеличиваем счетчик перестановок
             right--; // сдвигаем правую границу влево
         }
     }
@@ -35,12 +40,12 @@ void recursive_sort(vector<int>& arr, int left, int right) {
     right = r_hold;
 
     if (left < index) // Рекурсивно вызываем сортировку для левой и правой части массива
-        recursive_sort(arr, left, index - 1);
+        recursive_sort(arr, left, index - 1, result);
     if (right > index)
-        recursive_sort(arr, index + 1, right);
-} 
-*/
+        recursive_sort(arr, index + 1, right, result);
+}
 
+/*
 int find_min_index(vector<int>& arr, int left, int right, Actions& result) {
     int min_index = left; // Предполагаем, что минимальный элемент - это arr[i]
 
@@ -76,10 +81,12 @@ void recursive_sort(vector<int>& arr, int size, bool is_sorted, int index, Actio
     // Рекурсивный вызов функции сортировки
     recursive_sort(arr, size, is_sorted, index + 1, result);
 }
+*/
+// Какая-то вставка выбором получилась через рекурсию
 
 void recursive_sort_with_timer(vector<int>& arr, int size, Actions& result) {
     steady_clock::time_point start_time = start_timer();
-    recursive_sort(arr, size, false, 0, result);
+    recursive_sort(arr, 0, arr.size() - 1, result);
     steady_clock::time_point end_time = end_timer();
     print_sorted_arr(arr);
     cout << "Время рекурсивной сортировки: " << duration_time(start_time, end_time) << " микросекунд" << endl;
