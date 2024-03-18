@@ -391,7 +391,7 @@ void sorting(vec& main_vector, arr& sort_array, Actions actions) {
         }
         else if (choice == 10)
             break;
-        else cout << "Неверный индекс!";
+        else cout << "Неверный индекс!" << endl;
 
         fill_arr_with_random(main_vector);
 
