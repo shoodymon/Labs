@@ -1,9 +1,7 @@
 ﻿#include "laba_5.h"
 
-// typedef void (*sort_function)(vector<int>&, int, Actions&);
 using sort_function = void (*)(vector<int>&, int, Actions&);
 
-// Функция для получения указателя на функцию сортировки
 sort_function get_sort_function() {
     int choice;
     cout << "\n\tВыберите функцию сортировки:" << endl;
@@ -18,7 +16,6 @@ sort_function get_sort_function() {
     cout << "\t9. Сортировка слиянием" << endl;
     cout << "\tВведите номер (1-9): \t";    cin >> choice;
 
-    // Массив указателей на функции сортировки
     sort_function sort_functions[] = {
         bubble_sort,
         shaker_sort,
