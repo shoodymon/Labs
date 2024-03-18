@@ -1,11 +1,11 @@
 #include "prototypes.h"
 #include "pack.h"
 
-void bubble_sort(vec& main_vector, int size, Actions& result) {
-    steady_clock::time_point start_time = start_timer();
+void bubble_sort(vec& main_vector, Actions& result) {
+   steady_clock::time_point start_time = start_timer();
 
-    for (int i = 0; i < size - 1; i++) {
-        for (int j = 0; j < size - i - 1; j++) {
+    for (int i = 0; i < main_vector.size() - 1; i++) {
+        for (int j = 0; j < main_vector.size() - i - 1; j++) {
             result.comparisons++;
             if (main_vector.at(j) > main_vector.at(j + 1)) {
                 swap(main_vector.at(j), main_vector.at(j + 1));
@@ -22,12 +22,12 @@ void bubble_sort(vec& main_vector, int size, Actions& result) {
     reset(result);
 }
 
-void shaker_sort(vec& main_vector, int size, Actions& result) {
+void shaker_sort(vec& main_vector,  Actions& result) {
     steady_clock::time_point start_time = start_timer();
 
     bool swapped = true;
     int start = 0;
-    int end = size - 1;
+    int end = main_vector.size() - 1;
 
     while (swapped) {
         swapped = false;
@@ -72,10 +72,10 @@ void shaker_sort(vec& main_vector, int size, Actions& result) {
     reset(result);
 }
 
-void dwarves_sort(vec& main_vector, int size, Actions& result) {
+void dwarves_sort(vec& main_vector, Actions& result) {
     steady_clock::time_point start_time = start_timer();
 
-    int index = 0;  while (index < size) {
+    int index = 0;  while (index < main_vector.size()) {
         if (index == 0)
             index++;
         if (main_vector[index] >= main_vector[index - 1]) {
@@ -98,10 +98,10 @@ void dwarves_sort(vec& main_vector, int size, Actions& result) {
     reset(result);
 }
 
-void inserts_sort(vec& main_vector, int size, Actions& result) {
+void inserts_sort(vec& main_vector, Actions& result) {
     steady_clock::time_point start_time = start_timer();
 
-    for (int i = 1; i < size; i++) {
+    for (int i = 1; i < main_vector.size(); i++) {
         int key = main_vector.at(i);
         int j = i - 1;
         while (j >= 0 && main_vector.at(j) > key) {
@@ -121,12 +121,12 @@ void inserts_sort(vec& main_vector, int size, Actions& result) {
     reset(result);
 }
 
-void selection_sort(vec& main_vector, int size, Actions& result) {
+void selection_sort(vec& main_vector, Actions& result) {
     steady_clock::time_point start_time = start_timer();
 
-    for (int i = 0; i < size - 1; i++) {
+    for (int i = 0; i < main_vector.size() - 1; i++) {
         int min_index = i;
-        for (int j = i + 1; j < size; j++) {
+        for (int j = i + 1; j < main_vector.size(); j++) {
             if (main_vector.at(j) < main_vector.at(min_index)) {
                 min_index = j;
                 result.comparisons++;
@@ -144,11 +144,11 @@ void selection_sort(vec& main_vector, int size, Actions& result) {
     reset(result);
 }
 
-void shell_sort(vec& main_vector, int size, Actions& result) {
+void shell_sort(vec& main_vector, Actions& result) {
     steady_clock::time_point start_time = start_timer();
 
-    for (int step = size / 2; step > 0; step /= 2) {
-        for (int i = step; i < size; i++) {
+    for (int step = main_vector.size() / 2; step > 0; step /= 2) {
+        for (int i = step; i < main_vector.size(); i++) {
             for (int j = i; j >= step && main_vector.at(j - step) > main_vector.at(j); j -= step) {
                 swap(main_vector[j], main_vector[j - step]);
                 result.swaps++;
@@ -210,7 +210,7 @@ void recursive_sort(vec& main_vector, int left, int right, Actions& result) {
         recursive_sort(main_vector, index + 1, right, result);
 }
 
-void recursive_sort_with_timer(vec& main_vector, int size, Actions& result) {
+void recursive_sort_with_timer(vec& main_vector,  Actions& result) {
     steady_clock::time_point start_time = start_timer();
     recursive_sort(main_vector, 0, main_vector.size() - 1, result);
     steady_clock::time_point end_time = end_timer();
@@ -258,7 +258,7 @@ void hoara_sort(vec& main_vector, int first, int last, Actions& result) {
         hoara_sort(main_vector, first, j, result);
 }
 
-void hoara_sort_with_timer(vec& main_vector, int size, Actions& result) {
+void hoara_sort_with_timer(vec& main_vector, Actions& result) {
     steady_clock::time_point start_time = start_timer();
     hoara_sort(main_vector, 0, main_vector.size() - 1, result);
     steady_clock::time_point end_time = end_timer();
@@ -319,18 +319,19 @@ void merge(vec& main_vector, int left, int middle, int right, Actions& result) {
     }
 }
 
-void merging_sort(vec& main_vector, int len, Actions& result) {
+void merging_sort(vec& main_vector, Actions& result) {
     steady_clock::time_point start_time = start_timer();
+    int len = main_vector.size();
 
     int current_size;
     int left_start;
 
     // Цикл по подмассивам заданного размера
-    for (current_size = 1; current_size <= len - 1; current_size = 2 * current_size) {
+    for (current_size = 1; current_size <= main_vector.size() - 1; current_size = 2 * current_size) {
         // Цикл по подмассивам текущего размера
-        for (left_start = 0; left_start < len - 1; left_start += 2 * current_size) {
+        for (left_start = 0; left_start < main_vector.size() - 1; left_start += 2 * current_size) {
             // Находим середину и конец правого подмассива
-            int middle = min(left_start + current_size - 1, len - 1);
+            int middle = min(left_start + current_size - 1,len - 1);
             int right_end = min(left_start + 2 * current_size - 1, len - 1);
 
             // Вызываем функцию слияния для текущих подмассивов
@@ -345,3 +346,67 @@ void merging_sort(vec& main_vector, int len, Actions& result) {
     cout << "Перестановок: " << result.swaps << endl;
     reset(result);
 }
+
+void null_sort(vec& main_vector, Actions& result)
+{
+
+}
+
+void set_sort(arr& sort_array)
+{
+    sort_array = 
+    {
+        null_sort,
+        bubble_sort,
+        shaker_sort,
+        dwarves_sort,
+        inserts_sort,
+        selection_sort,
+        shell_sort,
+        recursive_sort_with_timer,
+        hoara_sort_with_timer,
+        merging_sort
+    };
+}
+
+void sorting(vec& main_vector, arr& sort_array, Actions actions)
+{
+    int choice{};
+    do
+    {
+        print_sorted_arr(main_vector);
+
+        cout << "\n\tВыберите функцию сортировки:" << endl;
+        cout << "\t1. Сортировка пузырьком" << endl;
+        cout << "\t2. Шейкерная сортировка" << endl;
+        cout << "\t3. Гномья сортировка" << endl;
+        cout << "\t4. Сортировка вставками" << endl;
+        cout << "\t5. Сортировка выбором" << endl;
+        cout << "\t6. Сортировка Шелла" << endl;
+        cout << "\t7. Рекурсивная сортировка" << endl;
+        cout << "\t8. Сортировка Хоара" << endl;
+        cout << "\t9. Сортировка слиянием" << endl;
+        cout << "\t10. Выход в меню" << endl;
+        cout << "\tВведите номер (1-9): \t";
+
+        std::cin >> choice;
+
+        if (choice > 0 and choice < sort_array.size())
+        {
+            Sort_func fcn = sort_array.at(choice);
+            fcn(main_vector, actions);
+        }
+        else if (choice == 10)
+            break;
+        else std::cout << "Неверный индекс!";
+
+        fill_arr_with_random(main_vector);
+
+    } while (choice != 10);
+}
+
+
+
+
+
+

@@ -6,13 +6,6 @@ int main() {
     system("chcp 1251");
     system("cls");
 
-    //int choice = 0;
-    //bool flag = true;
-    //int left = 0;
-    //int right = origional_arr.size() - 1;
-    //int middle = (left + right) / 2;
-    //int index = 0;
-
     int size = get_arr_size();
     vector <int> origional_arr{};
     fill_arr_with_random(origional_arr);

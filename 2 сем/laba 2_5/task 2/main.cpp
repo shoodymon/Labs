@@ -3,14 +3,14 @@
 
 
 int main() {
-    setlocale(0, "");
-    system("chcp 1251");
-    system("cls");
 
-    int size = get_arr_size();
+    setlocale(0, "");
+    srand(time(0));
+
     vec main_vector{};
-    fill_arr_with_random(main_vector);
-    Actions result = { 0, 0 };
+    arr sort_array{};
+
+    main_function(main_vector,sort_array);
 
     return 0;
 }

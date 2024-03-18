@@ -3,17 +3,14 @@
 #include <iostream>
 #include <array>
 #include <vector>
-#include <cstdlib> // rand() è srand()
-#include <ctime>   // time()
-#include <algorithm>
-#include <cmath>
+#include <random> 
+#include <ctime>  
 #include <functional>
 #include <chrono>
 #include <string>
-#include <Windows.h>
 
-#include "prototypes.h"
 #include "struct.h"
+#include "enums.h"
 
 using std::cin;
 using std::cout;
@@ -30,4 +27,4 @@ using namespace std::chrono;
 using vec = vector<int>;
 using Sort_func = function<void(vec& main_vector, Actions& result)>;
 
-typedef array<Sort_func, 9> arr;
+typedef array<Sort_func, 10> arr;

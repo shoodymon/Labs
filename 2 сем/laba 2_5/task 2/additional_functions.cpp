@@ -2,15 +2,6 @@
 #include "prototypes.h"
 
 
-void exit(bool& flag) {
-	cout << "\tЗавершение программмы...\n";
-	flag = false;
-}
-
-void error() {
-	cout << "Ошибка!\n\n";
-}
-
 void reset(Actions& result) {
 	result.comparisons = 0;
 	result.swaps = 0;
