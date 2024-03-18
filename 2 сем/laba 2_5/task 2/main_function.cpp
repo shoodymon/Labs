@@ -10,6 +10,7 @@ void main_function(vec& main_vector, arr& sort_array) {
 
 	int answer{};
 	do {
+		cout << "\t------Меню------" << endl;
 		cout << "\t1) СОРТИРОВКИ" << endl;
 		cout << "\t2) ВЫВОД МАТРИЦЫ" << endl;
 		cout << "\t3) ВЫХОД" << endl;
