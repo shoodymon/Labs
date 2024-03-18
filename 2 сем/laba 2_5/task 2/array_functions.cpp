@@ -3,8 +3,7 @@
 
 int get_arr_size() {
     int size_arr;
-    cout << "Введите размер массива (не меньше 100): "; 
-    cin >> size_arr;
+    cout << "Введите размер массива: ";     cin >> size_arr;
     return size_arr;
 }
 
@@ -14,7 +13,6 @@ void fill_arr_with_random(vec& main_vector) {
         main_vector[i] = rand() % 100;             
     }
 }
-
 
 void print_sorted_arr(vec& main_vector) {
     cout << "\n\tМатрица чисел:\n";

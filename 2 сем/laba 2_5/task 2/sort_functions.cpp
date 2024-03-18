@@ -347,15 +347,12 @@ void merging_sort(vec& main_vector, Actions& result) {
     reset(result);
 }
 
-void null_sort(vec& main_vector, Actions& result)
-{
+void null_sort(vec& main_vector, Actions& result) {
 
 }
 
-void set_sort(arr& sort_array)
-{
-    sort_array = 
-    {
+void set_sort(arr& sort_array) {
+    sort_array = {
         null_sort,
         bubble_sort,
         shaker_sort,
@@ -369,11 +366,10 @@ void set_sort(arr& sort_array)
     };
 }
 
-void sorting(vec& main_vector, arr& sort_array, Actions actions)
-{
+void sorting(vec& main_vector, arr& sort_array, Actions actions) {
     int choice{};
-    do
-    {
+
+    do {
         print_sorted_arr(main_vector);
 
         cout << "\n\tВыберите функцию сортировки:" << endl;
@@ -387,26 +383,17 @@ void sorting(vec& main_vector, arr& sort_array, Actions actions)
         cout << "\t8. Сортировка Хоара" << endl;
         cout << "\t9. Сортировка слиянием" << endl;
         cout << "\t10. Выход в меню" << endl;
-        cout << "\tВведите номер (1-9): \t";
+        cout << "\tВведите номер (1-10): \t";    cin >> choice;
 
-        std::cin >> choice;
-
-        if (choice > 0 and choice < sort_array.size())
-        {
+        if (choice > 0 and choice < sort_array.size()) {
             Sort_func fcn = sort_array.at(choice);
             fcn(main_vector, actions);
         }
         else if (choice == 10)
             break;
-        else std::cout << "Неверный индекс!";
+        else cout << "Неверный индекс!";
 
         fill_arr_with_random(main_vector);
 
     } while (choice != 10);
 }
-
-
-
-
-
-

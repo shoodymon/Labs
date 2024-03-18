@@ -1,15 +1,13 @@
 #pragma once
 #include "pack.h"
 
-enum Menu
-{
+enum Menu {
 	SORT = 1,
 	PRINT,
 	EXIT
 };
 
-enum Sort
-{
+enum Sort {
 	BUBBLE = 1,
 	SHAKER,
 	DWARVE,

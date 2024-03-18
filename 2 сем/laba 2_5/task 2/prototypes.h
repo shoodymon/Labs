@@ -35,7 +35,6 @@ void null_sort(vec& main_vector, Actions& result);
 void set_sort(arr& sort_array);
 void sorting(vec& main_vector, arr& sort_array, Actions actions);
 
-
 void exit(bool& flag);
 void error();
 void reset(Actions& result);
@@ -46,7 +45,6 @@ long duration_time(steady_clock::time_point start, steady_clock::time_point end)
 
 int get_arr_size();
 void fill_arr_with_random(vec& main_vector);
-void print_arr(vec& main_vector);
 void print_sorted_arr(vec& main_vector);
 int get_user_input();
 

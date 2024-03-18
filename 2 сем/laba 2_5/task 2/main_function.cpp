@@ -1,8 +1,7 @@
 ﻿#include "pack.h"
 #include "prototypes.h"
 
-void main_function(vec& main_vector,arr& sort_array)
-{
+void main_function(vec& main_vector, arr& sort_array) {
 	Actions actions{};
 	
 	main_vector.resize(get_arr_size());
@@ -10,18 +9,14 @@ void main_function(vec& main_vector,arr& sort_array)
 	set_sort(sort_array);
 
 	int answer{};
-	do
-	{
-		std::cout
-			<< "1) Выбрать сортировку\n"
-			<< "2) Я хочу вывести матрицу\n"
-			<< "3) Я хочу выйти\n\n"
-			<< "Выбор: ";
-		std::cin >> answer;
+	do {
+		cout << "\t1) СОРТИРОВКИ" << endl;
+		cout << "\t2) ВЫВОД МАТРИЦЫ" << endl;
+		cout << "\t3) ВЫХОД" << endl;
+		cout << "\n\tВыбор -->  ";	cin >> answer;
 
-		switch (answer)
-		{
-		case(SORT):		sorting(main_vector,sort_array,actions);	 break;
+		switch (answer) {
+		case(SORT):		sorting(main_vector, sort_array, actions);	 break;
 		case(PRINT):	print_sorted_arr(main_vector);				 break;
 		case(EXIT):													 break;
 		}	
