@@ -1,4 +1,4 @@
-#include "pack.h"
+ï»¿#include "pack.h"
 #include "prototypes.h"
 
 void main_function(vec& main_vector,arr& sort_array)
@@ -13,10 +13,10 @@ void main_function(vec& main_vector,arr& sort_array)
 	do
 	{
 		std::cout
-			<< "1) Âûáðàòü ñîðòèðîâêó\n"
-			<< "2) ß õî÷ó âûâåñòè ìàòðèöó\n"
-			<< "3) ß õî÷ó âûéòè\n\n"
-			<< "Âûáîð: ";
+			<< "1) Ð’Ñ‹Ð±Ñ€Ð°Ñ‚ÑŒ ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÑƒ\n"
+			<< "2) Ð¯ Ñ…Ð¾Ñ‡Ñƒ Ð²Ñ‹Ð²ÐµÑÑ‚Ð¸ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñƒ\n"
+			<< "3) Ð¯ Ñ…Ð¾Ñ‡Ñƒ Ð²Ñ‹Ð¹Ñ‚Ð¸\n\n"
+			<< "Ð’Ñ‹Ð±Ð¾Ñ€: ";
 		std::cin >> answer;
 
 		switch (answer)

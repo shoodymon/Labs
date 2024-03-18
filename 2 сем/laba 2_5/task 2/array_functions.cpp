@@ -1,9 +1,9 @@
-#include "pack.h"
+ï»¿#include "pack.h"
 #include "prototypes.h"
 
 int get_arr_size() {
     int size_arr;
-    cout << "Ââåäèòå ðàçìåð ìàññèâà (íå ìåíüøå 100): "; 
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°ÑÑÐ¸Ð²Ð° (Ð½Ðµ Ð¼ÐµÐ½ÑŒÑˆÐµ 100): "; 
     cin >> size_arr;
     return size_arr;
 }
@@ -17,12 +17,12 @@ void fill_arr_with_random(vec& main_vector) {
 
 
 void print_sorted_arr(vec& main_vector) {
-    cout << "\n\tÌàòðèöà ÷èñåë:\n";
+    cout << "\n\tÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ð° Ñ‡Ð¸ÑÐµÐ»:\n";
 
     for (int i = 0; i < main_vector.size(); i++) {
         cout << main_vector[i] << " ";
 
-        // Ïåðåõîä íà íîâóþ ñòðîêó ïîñëå êàæäûõ 10 ýëåìåíòîâ
+        // ÐŸÐµÑ€ÐµÑ…Ð¾Ð´ Ð½Ð° Ð½Ð¾Ð²ÑƒÑŽ ÑÑ‚Ñ€Ð¾ÐºÑƒ Ð¿Ð¾ÑÐ»Ðµ ÐºÐ°Ð¶Ð´Ñ‹Ñ… 10 ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²
         if ((i + 1) % 10 == 0)
             cout << endl;
     }
@@ -31,6 +31,6 @@ void print_sorted_arr(vec& main_vector) {
 
 int get_user_input() {
     int value;
-    cout << "Ââåäèòå çíà÷åíèå äëÿ ïîèñêà: ";  cin >> value;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð´Ð»Ñ Ð¿Ð¾Ð¸ÑÐºÐ°: ";  cin >> value;
     return value;
 }

@@ -1,4 +1,4 @@
-#include "prototypes.h"
+п»ї#include "prototypes.h"
 #include "pack.h"
 
 void bubble_sort(vec& main_vector, Actions& result) {
@@ -16,9 +16,9 @@ void bubble_sort(vec& main_vector, Actions& result) {
 
     steady_clock::time_point end_time = end_timer();
     print_sorted_arr(main_vector);
-    cout << "Время пузырьковой сортировки: " << duration_time(start_time, end_time) << " микросекунд" << endl;
-    cout << "Сравнений: " << result.comparisons << endl;
-    cout << "Перестановок: " << result.swaps << endl;
+    cout << "Р’СЂРµРјСЏ РїСѓР·С‹СЂСЊРєРѕРІРѕР№ СЃРѕСЂС‚РёСЂРѕРІРєРё: " << duration_time(start_time, end_time) << " РјРёРєСЂРѕСЃРµРєСѓРЅРґ" << endl;
+    cout << "РЎСЂР°РІРЅРµРЅРёР№: " << result.comparisons << endl;
+    cout << "РџРµСЂРµСЃС‚Р°РЅРѕРІРѕРє: " << result.swaps << endl;
     reset(result);
 }
 
@@ -32,7 +32,7 @@ void shaker_sort(vec& main_vector,  Actions& result) {
     while (swapped) {
         swapped = false;
 
-        // Проход слева направо
+        // РџСЂРѕС…РѕРґ СЃР»РµРІР° РЅР°РїСЂР°РІРѕ
         for (int i = start; i < end; ++i) {
             if (main_vector.at(i) > main_vector.at(i + 1)) {
                 swap(main_vector.at(i), main_vector.at(i + 1));
@@ -42,15 +42,15 @@ void shaker_sort(vec& main_vector,  Actions& result) {
             result.comparisons++;
         }
 
-        if (!swapped) // Если не было перестановок, то массив уже отсортирован
+        if (!swapped) // Р•СЃР»Рё РЅРµ Р±С‹Р»Рѕ РїРµСЂРµСЃС‚Р°РЅРѕРІРѕРє, С‚Рѕ РјР°СЃСЃРёРІ СѓР¶Рµ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅ
             break;
 
         swapped = false;
 
-        // Уменьшаем правую границу
+        // РЈРјРµРЅСЊС€Р°РµРј РїСЂР°РІСѓСЋ РіСЂР°РЅРёС†Сѓ
         --end;
 
-        // Проход справа налево
+        // РџСЂРѕС…РѕРґ СЃРїСЂР°РІР° РЅР°Р»РµРІРѕ
         for (int i = end - 1; i >= start; --i) {
             if (main_vector.at(i) > main_vector.at(i + 1)) {
                 swap(main_vector.at(i), main_vector.at(i + 1));
@@ -60,15 +60,15 @@ void shaker_sort(vec& main_vector,  Actions& result) {
             result.comparisons++;
         }
 
-        // Увеличиваем левую границу
+        // РЈРІРµР»РёС‡РёРІР°РµРј Р»РµРІСѓСЋ РіСЂР°РЅРёС†Сѓ
         ++start;
     }
 
     steady_clock::time_point end_time = end_timer();
     print_sorted_arr(main_vector);
-    cout << "Время шейкерной сортировки: " << duration_time(start_time, end_time) << " микросекунд" << endl;
-    cout << "Сравнений: " << result.comparisons << endl;
-    cout << "Перестановок: " << result.swaps << endl;
+    cout << "Р’СЂРµРјСЏ С€РµР№РєРµСЂРЅРѕР№ СЃРѕСЂС‚РёСЂРѕРІРєРё: " << duration_time(start_time, end_time) << " РјРёРєСЂРѕСЃРµРєСѓРЅРґ" << endl;
+    cout << "РЎСЂР°РІРЅРµРЅРёР№: " << result.comparisons << endl;
+    cout << "РџРµСЂРµСЃС‚Р°РЅРѕРІРѕРє: " << result.swaps << endl;
     reset(result);
 }
 
@@ -92,9 +92,9 @@ void dwarves_sort(vec& main_vector, Actions& result) {
 
     steady_clock::time_point end_time = end_timer();
     print_sorted_arr(main_vector);
-    cout << "Время гномьей сортировки: " << duration_time(start_time, end_time) << " микросекунд" << endl;
-    cout << "Сравнений: " << result.comparisons << endl;
-    cout << "Перестановок: " << result.swaps << endl;
+    cout << "Р’СЂРµРјСЏ РіРЅРѕРјСЊРµР№ СЃРѕСЂС‚РёСЂРѕРІРєРё: " << duration_time(start_time, end_time) << " РјРёРєСЂРѕСЃРµРєСѓРЅРґ" << endl;
+    cout << "РЎСЂР°РІРЅРµРЅРёР№: " << result.comparisons << endl;
+    cout << "РџРµСЂРµСЃС‚Р°РЅРѕРІРѕРє: " << result.swaps << endl;
     reset(result);
 }
 
@@ -115,9 +115,9 @@ void inserts_sort(vec& main_vector, Actions& result) {
 
     steady_clock::time_point end_time = end_timer();
     print_sorted_arr(main_vector);
-    cout << "Время сортировки вставками: " << duration_time(start_time, end_time) << " микросекунд" << endl;
-    cout << "Сравнений: " << result.comparisons << endl;
-    cout << "Перестановок: " << result.swaps << endl;
+    cout << "Р’СЂРµРјСЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РІСЃС‚Р°РІРєР°РјРё: " << duration_time(start_time, end_time) << " РјРёРєСЂРѕСЃРµРєСѓРЅРґ" << endl;
+    cout << "РЎСЂР°РІРЅРµРЅРёР№: " << result.comparisons << endl;
+    cout << "РџРµСЂРµСЃС‚Р°РЅРѕРІРѕРє: " << result.swaps << endl;
     reset(result);
 }
 
@@ -138,9 +138,9 @@ void selection_sort(vec& main_vector, Actions& result) {
 
     steady_clock::time_point end_time = end_timer();
     print_sorted_arr(main_vector);
-    cout << "Время сортировки выбором: " << duration_time(start_time, end_time) << " микросекунд" << endl;
-    cout << "Сравнений: " << result.comparisons << endl;
-    cout << "Перестановок: " << result.swaps << endl;
+    cout << "Р’СЂРµРјСЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РІС‹Р±РѕСЂРѕРј: " << duration_time(start_time, end_time) << " РјРёРєСЂРѕСЃРµРєСѓРЅРґ" << endl;
+    cout << "РЎСЂР°РІРЅРµРЅРёР№: " << result.comparisons << endl;
+    cout << "РџРµСЂРµСЃС‚Р°РЅРѕРІРѕРє: " << result.swaps << endl;
     reset(result);
 }
 
@@ -159,52 +159,52 @@ void shell_sort(vec& main_vector, Actions& result) {
 
     steady_clock::time_point end_time = end_timer();
     print_sorted_arr(main_vector);
-    cout << "Время сортировки Шелла: " << duration_time(start_time, end_time) << " микросекунд" << endl;
-    cout << "Сравнений: " << result.comparisons << endl;
-    cout << "Перестановок: " << result.swaps << endl;
+    cout << "Р’СЂРµРјСЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РЁРµР»Р»Р°: " << duration_time(start_time, end_time) << " РјРёРєСЂРѕСЃРµРєСѓРЅРґ" << endl;
+    cout << "РЎСЂР°РІРЅРµРЅРёР№: " << result.comparisons << endl;
+    cout << "РџРµСЂРµСЃС‚Р°РЅРѕРІРѕРє: " << result.swaps << endl;
     reset(result);
 }
 
 void recursive_sort(vec& main_vector, int left, int right, Actions& result) {
-    int pivot; // разрешающий элемент
-    int index; // индекс разрешающего элемента
-    int l_hold = left; // левая граница
-    int r_hold = right; // правая граница
+    int pivot; // СЂР°Р·СЂРµС€Р°СЋС‰РёР№ СЌР»РµРјРµРЅС‚
+    int index; // РёРЅРґРµРєСЃ СЂР°Р·СЂРµС€Р°СЋС‰РµРіРѕ СЌР»РµРјРµРЅС‚Р°
+    int l_hold = left; // Р»РµРІР°СЏ РіСЂР°РЅРёС†Р°
+    int r_hold = right; // РїСЂР°РІР°СЏ РіСЂР°РЅРёС†Р°
     pivot = main_vector.at(left);
 
-    // пока границы не сомкнутся
+    // РїРѕРєР° РіСЂР°РЅРёС†С‹ РЅРµ СЃРѕРјРєРЅСѓС‚СЃСЏ
     while (left < right) {
         while ((main_vector.at(right) > pivot) && (left < right)) {
-            result.comparisons++; // увеличиваем счетчик сравнений
-            right--; // сдвигаем правую границу пока элемент [right] больше [pivot]
+            result.comparisons++; // СѓРІРµР»РёС‡РёРІР°РµРј СЃС‡РµС‚С‡РёРє СЃСЂР°РІРЅРµРЅРёР№
+            right--; // СЃРґРІРёРіР°РµРј РїСЂР°РІСѓСЋ РіСЂР°РЅРёС†Сѓ РїРѕРєР° СЌР»РµРјРµРЅС‚ [right] Р±РѕР»СЊС€Рµ [pivot]
         }
 
-        // если границы не сомкнулись
+        // РµСЃР»Рё РіСЂР°РЅРёС†С‹ РЅРµ СЃРѕРјРєРЅСѓР»РёСЃСЊ
         if (left != right) {
-            main_vector.at(left) = main_vector.at(right); // перемещаем элемент [right] на место разрешающего
-            result.swaps++; // увеличиваем счетчик перестановок
-            left++; // сдвигаем левую границу вправо
+            main_vector.at(left) = main_vector.at(right); // РїРµСЂРµРјРµС‰Р°РµРј СЌР»РµРјРµРЅС‚ [right] РЅР° РјРµСЃС‚Рѕ СЂР°Р·СЂРµС€Р°СЋС‰РµРіРѕ
+            result.swaps++; // СѓРІРµР»РёС‡РёРІР°РµРј СЃС‡РµС‚С‡РёРє РїРµСЂРµСЃС‚Р°РЅРѕРІРѕРє
+            left++; // СЃРґРІРёРіР°РµРј Р»РµРІСѓСЋ РіСЂР°РЅРёС†Сѓ РІРїСЂР°РІРѕ
         }
 
         while ((main_vector.at(left) < pivot) && (left < right)) {
-            result.comparisons++; // увеличиваем счетчик сравнений
-            left++; // сдвигаем левую границу пока элемент [left] меньше [pivot]
+            result.comparisons++; // СѓРІРµР»РёС‡РёРІР°РµРј СЃС‡РµС‚С‡РёРє СЃСЂР°РІРЅРµРЅРёР№
+            left++; // СЃРґРІРёРіР°РµРј Р»РµРІСѓСЋ РіСЂР°РЅРёС†Сѓ РїРѕРєР° СЌР»РµРјРµРЅС‚ [left] РјРµРЅСЊС€Рµ [pivot]
         }
 
-        // если границы не сомкнулись
+        // РµСЃР»Рё РіСЂР°РЅРёС†С‹ РЅРµ СЃРѕРјРєРЅСѓР»РёСЃСЊ
         if (left != right) {
-            main_vector.at(right) = main_vector.at(left); // перемещаем элемент [left] на место [right]
-            result.swaps++; // увеличиваем счетчик перестановок
-            right--; // сдвигаем правую границу влево
+            main_vector.at(right) = main_vector.at(left); // РїРµСЂРµРјРµС‰Р°РµРј СЌР»РµРјРµРЅС‚ [left] РЅР° РјРµСЃС‚Рѕ [right]
+            result.swaps++; // СѓРІРµР»РёС‡РёРІР°РµРј СЃС‡РµС‚С‡РёРє РїРµСЂРµСЃС‚Р°РЅРѕРІРѕРє
+            right--; // СЃРґРІРёРіР°РµРј РїСЂР°РІСѓСЋ РіСЂР°РЅРёС†Сѓ РІР»РµРІРѕ
         }
     }
 
-    main_vector.at(left) = pivot; // ставим разрешающий элемент на место
+    main_vector.at(left) = pivot; // СЃС‚Р°РІРёРј СЂР°Р·СЂРµС€Р°СЋС‰РёР№ СЌР»РµРјРµРЅС‚ РЅР° РјРµСЃС‚Рѕ
     index = left;
     left = l_hold;
     right = r_hold;
 
-    if (left < index) // Рекурсивно вызываем сортировку для левой и правой части массива
+    if (left < index) // Р РµРєСѓСЂСЃРёРІРЅРѕ РІС‹Р·С‹РІР°РµРј СЃРѕСЂС‚РёСЂРѕРІРєСѓ РґР»СЏ Р»РµРІРѕР№ Рё РїСЂР°РІРѕР№ С‡Р°СЃС‚Рё РјР°СЃСЃРёРІР°
         recursive_sort(main_vector, left, index - 1, result);
     if (right > index)
         recursive_sort(main_vector, index + 1, right, result);
@@ -215,30 +215,30 @@ void recursive_sort_with_timer(vec& main_vector,  Actions& result) {
     recursive_sort(main_vector, 0, main_vector.size() - 1, result);
     steady_clock::time_point end_time = end_timer();
     print_sorted_arr(main_vector);
-    cout << "Время рекурсивной сортировки: " << duration_time(start_time, end_time) << " микросекунд" << endl;
-    cout << "Сравнений: " << result.comparisons << endl;
-    cout << "Перестановок: " << result.swaps << endl;
+    cout << "Р’СЂРµРјСЏ СЂРµРєСѓСЂСЃРёРІРЅРѕР№ СЃРѕСЂС‚РёСЂРѕРІРєРё: " << duration_time(start_time, end_time) << " РјРёРєСЂРѕСЃРµРєСѓРЅРґ" << endl;
+    cout << "РЎСЂР°РІРЅРµРЅРёР№: " << result.comparisons << endl;
+    cout << "РџРµСЂРµСЃС‚Р°РЅРѕРІРѕРє: " << result.swaps << endl;
     reset(result);
 }
 
 void hoara_sort(vec& main_vector, int first, int last, Actions& result) {
     int i = first, j = last;
-    int pivot = main_vector.at((first + last) / 2); // Выбор опорного элемента посередине вектора
+    int pivot = main_vector.at((first + last) / 2); // Р’С‹Р±РѕСЂ РѕРїРѕСЂРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РїРѕСЃРµСЂРµРґРёРЅРµ РІРµРєС‚РѕСЂР°
 
     do {
-        // Поиск элемента в левой части, который больше или равен опорному
+        // РџРѕРёСЃРє СЌР»РµРјРµРЅС‚Р° РІ Р»РµРІРѕР№ С‡Р°СЃС‚Рё, РєРѕС‚РѕСЂС‹Р№ Р±РѕР»СЊС€Рµ РёР»Рё СЂР°РІРµРЅ РѕРїРѕСЂРЅРѕРјСѓ
         while (main_vector.at(i) < pivot) {
             i++;
             result.comparisons++;
         }
 
-        // Поиск элемента в правой части, который меньше или равен опорному
+        // РџРѕРёСЃРє СЌР»РµРјРµРЅС‚Р° РІ РїСЂР°РІРѕР№ С‡Р°СЃС‚Рё, РєРѕС‚РѕСЂС‹Р№ РјРµРЅСЊС€Рµ РёР»Рё СЂР°РІРµРЅ РѕРїРѕСЂРЅРѕРјСѓ
         while (main_vector.at(j) > pivot) {
             j--;
             result.comparisons++;
         }
 
-        // Производим обмен элементов
+        // РџСЂРѕРёР·РІРѕРґРёРј РѕР±РјРµРЅ СЌР»РµРјРµРЅС‚РѕРІ
         if (i <= j) {
             if (i < j) {
                 swap(main_vector.at(i), main_vector.at(j));
@@ -249,11 +249,11 @@ void hoara_sort(vec& main_vector, int first, int last, Actions& result) {
         }
     } while (i <= j);
 
-    // Рекурсивный вызов для сортировки правой части вектора
+    // Р РµРєСѓСЂСЃРёРІРЅС‹Р№ РІС‹Р·РѕРІ РґР»СЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РїСЂР°РІРѕР№ С‡Р°СЃС‚Рё РІРµРєС‚РѕСЂР°
     if (i < last)
         hoara_sort(main_vector, i, last, result);
 
-    // Рекурсивный вызов для сортировки левой части вектора
+    // Р РµРєСѓСЂСЃРёРІРЅС‹Р№ РІС‹Р·РѕРІ РґР»СЏ СЃРѕСЂС‚РёСЂРѕРІРєРё Р»РµРІРѕР№ С‡Р°СЃС‚Рё РІРµРєС‚РѕСЂР°
     if (first < j)
         hoara_sort(main_vector, first, j, result);
 }
@@ -263,30 +263,30 @@ void hoara_sort_with_timer(vec& main_vector, Actions& result) {
     hoara_sort(main_vector, 0, main_vector.size() - 1, result);
     steady_clock::time_point end_time = end_timer();
     print_sorted_arr(main_vector);
-    cout << "Время сортировки Хоара: " << duration_time(start_time, end_time) << " микросекунд" << endl;
-    cout << "Сравнений: " << result.comparisons << endl;
-    cout << "Перестановок: " << result.swaps << endl;
+    cout << "Р’СЂРµРјСЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РҐРѕР°СЂР°: " << duration_time(start_time, end_time) << " РјРёРєСЂРѕСЃРµРєСѓРЅРґ" << endl;
+    cout << "РЎСЂР°РІРЅРµРЅРёР№: " << result.comparisons << endl;
+    cout << "РџРµСЂРµСЃС‚Р°РЅРѕРІРѕРє: " << result.swaps << endl;
     reset(result);
 }
 
 void merge(vec& main_vector, int left, int middle, int right, Actions& result) {
-    // Вычисляем размеры двух подмассивов
+    // Р’С‹С‡РёСЃР»СЏРµРј СЂР°Р·РјРµСЂС‹ РґРІСѓС… РїРѕРґРјР°СЃСЃРёРІРѕРІ
     int size1 = middle - left + 1;
     int size2 = right - middle;
 
-    // Создаем временные массивы для хранения левого и правого подмассивов
+    // РЎРѕР·РґР°РµРј РІСЂРµРјРµРЅРЅС‹Рµ РјР°СЃСЃРёРІС‹ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ Р»РµРІРѕРіРѕ Рё РїСЂР°РІРѕРіРѕ РїРѕРґРјР°СЃСЃРёРІРѕРІ
     vector<int> left_arr(size1), right_arr(size2);
 
-    // Копируем данные из основного массива во временные массивы
+    // РљРѕРїРёСЂСѓРµРј РґР°РЅРЅС‹Рµ РёР· РѕСЃРЅРѕРІРЅРѕРіРѕ РјР°СЃСЃРёРІР° РІРѕ РІСЂРµРјРµРЅРЅС‹Рµ РјР°СЃСЃРёРІС‹
     for (int i = 0; i < size1; i++)
         left_arr.at(i) = main_vector.at(left + i);
     for (int j = 0; j < size2; j++)
         right_arr.at(j) = main_vector.at(middle + 1 + j);
 
-    // Индексы для обхода левого, правого и основного массивов
+    // РРЅРґРµРєСЃС‹ РґР»СЏ РѕР±С…РѕРґР° Р»РµРІРѕРіРѕ, РїСЂР°РІРѕРіРѕ Рё РѕСЃРЅРѕРІРЅРѕРіРѕ РјР°СЃСЃРёРІРѕРІ
     int i = 0, j = 0, k = left;
 
-    // Слияние двух временных массивов в один основной массив
+    // РЎР»РёСЏРЅРёРµ РґРІСѓС… РІСЂРµРјРµРЅРЅС‹С… РјР°СЃСЃРёРІРѕРІ РІ РѕРґРёРЅ РѕСЃРЅРѕРІРЅРѕР№ РјР°СЃСЃРёРІ
     while (i < size1 && j < size2) {
         result.comparisons++;
         if (left_arr.at(i) <= right_arr.at(j)) {
@@ -302,7 +302,7 @@ void merge(vec& main_vector, int left, int middle, int right, Actions& result) {
         k++;
     }
 
-    // Дописываем оставшиеся элементы из левого временного массива, если такие есть
+    // Р”РѕРїРёСЃС‹РІР°РµРј РѕСЃС‚Р°РІС€РёРµСЃСЏ СЌР»РµРјРµРЅС‚С‹ РёР· Р»РµРІРѕРіРѕ РІСЂРµРјРµРЅРЅРѕРіРѕ РјР°СЃСЃРёРІР°, РµСЃР»Рё С‚Р°РєРёРµ РµСЃС‚СЊ
     while (i < size1) {
         main_vector.at(k) = left_arr.at(i);
         i++;
@@ -310,7 +310,7 @@ void merge(vec& main_vector, int left, int middle, int right, Actions& result) {
         result.swaps++;
     }
 
-    // Дописываем оставшиеся элементы из правого временного массива, если такие есть
+    // Р”РѕРїРёСЃС‹РІР°РµРј РѕСЃС‚Р°РІС€РёРµСЃСЏ СЌР»РµРјРµРЅС‚С‹ РёР· РїСЂР°РІРѕРіРѕ РІСЂРµРјРµРЅРЅРѕРіРѕ РјР°СЃСЃРёРІР°, РµСЃР»Рё С‚Р°РєРёРµ РµСЃС‚СЊ
     while (j < size2) {
         main_vector.at(k) = right_arr.at(j);
         j++;
@@ -326,24 +326,24 @@ void merging_sort(vec& main_vector, Actions& result) {
     int current_size;
     int left_start;
 
-    // Цикл по подмассивам заданного размера
+    // Р¦РёРєР» РїРѕ РїРѕРґРјР°СЃСЃРёРІР°Рј Р·Р°РґР°РЅРЅРѕРіРѕ СЂР°Р·РјРµСЂР°
     for (current_size = 1; current_size <= main_vector.size() - 1; current_size = 2 * current_size) {
-        // Цикл по подмассивам текущего размера
+        // Р¦РёРєР» РїРѕ РїРѕРґРјР°СЃСЃРёРІР°Рј С‚РµРєСѓС‰РµРіРѕ СЂР°Р·РјРµСЂР°
         for (left_start = 0; left_start < main_vector.size() - 1; left_start += 2 * current_size) {
-            // Находим середину и конец правого подмассива
+            // РќР°С…РѕРґРёРј СЃРµСЂРµРґРёРЅСѓ Рё РєРѕРЅРµС† РїСЂР°РІРѕРіРѕ РїРѕРґРјР°СЃСЃРёРІР°
             int middle = min(left_start + current_size - 1,len - 1);
             int right_end = min(left_start + 2 * current_size - 1, len - 1);
 
-            // Вызываем функцию слияния для текущих подмассивов
+            // Р’С‹Р·С‹РІР°РµРј С„СѓРЅРєС†РёСЋ СЃР»РёСЏРЅРёСЏ РґР»СЏ С‚РµРєСѓС‰РёС… РїРѕРґРјР°СЃСЃРёРІРѕРІ
             merge(main_vector, left_start, middle, right_end, result);
         }
     }
 
     steady_clock::time_point end_time = end_timer();
     print_sorted_arr(main_vector);
-    cout << "Время сортировки слиянием: " << duration_time(start_time, end_time) << " микросекунд" << endl;
-    cout << "Сравнений: " << result.comparisons << endl;
-    cout << "Перестановок: " << result.swaps << endl;
+    cout << "Р’СЂРµРјСЏ СЃРѕСЂС‚РёСЂРѕРІРєРё СЃР»РёСЏРЅРёРµРј: " << duration_time(start_time, end_time) << " РјРёРєСЂРѕСЃРµРєСѓРЅРґ" << endl;
+    cout << "РЎСЂР°РІРЅРµРЅРёР№: " << result.comparisons << endl;
+    cout << "РџРµСЂРµСЃС‚Р°РЅРѕРІРѕРє: " << result.swaps << endl;
     reset(result);
 }
 
@@ -376,18 +376,18 @@ void sorting(vec& main_vector, arr& sort_array, Actions actions)
     {
         print_sorted_arr(main_vector);
 
-        cout << "\n\tВыберите функцию сортировки:" << endl;
-        cout << "\t1. Сортировка пузырьком" << endl;
-        cout << "\t2. Шейкерная сортировка" << endl;
-        cout << "\t3. Гномья сортировка" << endl;
-        cout << "\t4. Сортировка вставками" << endl;
-        cout << "\t5. Сортировка выбором" << endl;
-        cout << "\t6. Сортировка Шелла" << endl;
-        cout << "\t7. Рекурсивная сортировка" << endl;
-        cout << "\t8. Сортировка Хоара" << endl;
-        cout << "\t9. Сортировка слиянием" << endl;
-        cout << "\t10. Выход в меню" << endl;
-        cout << "\tВведите номер (1-9): \t";
+        cout << "\n\tР’С‹Р±РµСЂРёС‚Рµ С„СѓРЅРєС†РёСЋ СЃРѕСЂС‚РёСЂРѕРІРєРё:" << endl;
+        cout << "\t1. РЎРѕСЂС‚РёСЂРѕРІРєР° РїСѓР·С‹СЂСЊРєРѕРј" << endl;
+        cout << "\t2. РЁРµР№РєРµСЂРЅР°СЏ СЃРѕСЂС‚РёСЂРѕРІРєР°" << endl;
+        cout << "\t3. Р“РЅРѕРјСЊСЏ СЃРѕСЂС‚РёСЂРѕРІРєР°" << endl;
+        cout << "\t4. РЎРѕСЂС‚РёСЂРѕРІРєР° РІСЃС‚Р°РІРєР°РјРё" << endl;
+        cout << "\t5. РЎРѕСЂС‚РёСЂРѕРІРєР° РІС‹Р±РѕСЂРѕРј" << endl;
+        cout << "\t6. РЎРѕСЂС‚РёСЂРѕРІРєР° РЁРµР»Р»Р°" << endl;
+        cout << "\t7. Р РµРєСѓСЂСЃРёРІРЅР°СЏ СЃРѕСЂС‚РёСЂРѕРІРєР°" << endl;
+        cout << "\t8. РЎРѕСЂС‚РёСЂРѕРІРєР° РҐРѕР°СЂР°" << endl;
+        cout << "\t9. РЎРѕСЂС‚РёСЂРѕРІРєР° СЃР»РёСЏРЅРёРµРј" << endl;
+        cout << "\t10. Р’С‹С…РѕРґ РІ РјРµРЅСЋ" << endl;
+        cout << "\tР’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ (1-9): \t";
 
         std::cin >> choice;
 
@@ -398,7 +398,7 @@ void sorting(vec& main_vector, arr& sort_array, Actions actions)
         }
         else if (choice == 10)
             break;
-        else std::cout << "Неверный индекс!";
+        else std::cout << "РќРµРІРµСЂРЅС‹Р№ РёРЅРґРµРєСЃ!";
 
         fill_arr_with_random(main_vector);
 
