@@ -49,6 +49,7 @@ void treeprint(tnode* tree) {
 class Tree {
 
     Node* root = nullptr; // Указатель на корневой узел
+    bool is_finded = true;
 
 public:
 
@@ -148,36 +149,51 @@ public:
     }
 
     // Метод для начала поиска в дереве
-    bool search(int info) {
+    void search(int info) {
         if (root == nullptr) {
-            cout << "Пусто. Ничего не найдено. " << endl;
-            return false;
+            is_finded = false;
         }
         else if (info == root->info) {
-            cout << "Узел найден. " << endl;
-            return true;
+            is_finded = true;
         }
         // Реркурсивный поиск в соответствующем поддереве
         else if (info < root->info) return search(info, root->left);
         else if (info > root->info) return search(info, root->right);
-        else cout << "\t\t\t\tError." << endl;
+        else {
+            cout << "\t\t\t\tError." << endl;
+            is_finded = false;
+        }
+
+        if (is_finded) { 
+            cout << "Узел найден.\n"; 
+        } else { 
+            cout << "Пусто. Ничего не найдено.\n"; 
+        }
     }
 
     // Метод для рекурсивного поиска в поддереве, начиная с заданного узла
     // Выполняет рекурсивный поиск в поддереве, начиная с этого узла
-    bool search(int info, Node* tree) {
+    void search(int info, Node* tree) {
         if (tree == nullptr) {
-            cout << "Пусто. Ничего не найдено. " << endl;
-            return false;
+            is_finded = false;
         }
         else if (info == tree->info) {
-            cout << "Узел найден. " << endl;
-            return true;
+            is_finded = true;
         }
         // Рекурсивно вызывает сам себя для поиска в левом или правом поддереве
         else if (info < tree->info) return search(info, tree->left);
         else if (info > tree->info) return search(info, tree->right);
-        else cout << "\t\t\t\tError." << endl;
+        else {
+            cout << "\t\t\t\tError." << endl;
+            is_finded = false;
+        }
+
+        if (is_finded) {
+            cout << "Узел найден.\n";
+        }
+        else {
+            cout << "Пусто. Ничего не найдено.\n";
+        }
     }
 
     // Прямой обход

@@ -3,9 +3,11 @@
 #include <iostream>
 #include <iomanip>
 
+
 using std::cout;
 using std::endl;
 using std::setw;
+
 
 struct Node {
     int info;
@@ -20,7 +22,7 @@ private:
 
     int height(Node* node) {
         if (node == nullptr)
-            return 0;
+            return false;
         return node->height;
     }
 
@@ -118,6 +120,32 @@ public:
         root = insert(root, info);
     }
 
+    void insert() {
+        // Вариант #9 - Данные: 6 3 0 2 1 5 4 
+
+        insert(6);
+        showSymmetricalOrder();
+
+        insert(3);
+        showSymmetricalOrder();
+
+        insert(0);
+        showSymmetricalOrder();
+
+        insert(2);
+        showSymmetricalOrder();
+
+        insert(1);
+        showSymmetricalOrder();
+
+        insert(5);
+        showSymmetricalOrder();
+
+        insert(4);
+        cout << "\n\t\tCбалансированное дерево: \n\n" << endl;
+        showSymmetricalOrder();
+    }
+
     void showDirectOrder(Node* node, int indent) {
         if (node != nullptr) {
             cout << "\t\t\t\t" << setw(indent) << node->info << " (" << getBalance(node) << ")" << endl;
@@ -160,6 +188,7 @@ public:
         else {
             cout << "\t\t\t\tДерево пустое :(" << endl;
         }
+        cout << "\n--------------------------------------------------------------------------------------------------------------\n\n";
     }
 
     void showReverseOrder(Node* node, int indent) {

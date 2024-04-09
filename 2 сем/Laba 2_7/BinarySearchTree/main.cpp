@@ -30,7 +30,8 @@ int main() {
 	tree.erase(65);
 	tree.showSymmetricalOrder();
 
-	cout << tree.search(50) << endl;
-	cout << tree.search(20) << endl;
-	cout << tree.search(11) << endl;
+	cout << "50: ";		tree.search(50);
+	cout << "20: ";		tree.search(20);
+	cout << "11: ";		tree.search(11);
+	cout << "41: ";		tree.search(41);
 }
