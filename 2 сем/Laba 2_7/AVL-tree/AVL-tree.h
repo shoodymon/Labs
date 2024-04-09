@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <iostream>
 #include <iomanip>
@@ -129,7 +129,7 @@ public:
             showDirectOrder(root->right, indent + 12);
         }
         else {
-            cout << "\t\t\t\tÄåðåâî ïóñòîå :(" << endl;
+            cout << "\t\t\t\tÐ”ÐµÑ€ÐµÐ²Ð¾ Ð¿ÑƒÑÑ‚Ð¾Ðµ :(" << endl;
         }
     }
 
@@ -151,7 +151,7 @@ public:
             showSymmetricalOrder(root->right, indent + 12);
         }
         else {
-            cout << "\t\t\t\tÄåðåâî ïóñòîå :(" << endl;
+            cout << "\t\t\t\tÐ”ÐµÑ€ÐµÐ²Ð¾ Ð¿ÑƒÑÑ‚Ð¾Ðµ :(" << endl;
         }
     }
 
@@ -173,7 +173,7 @@ public:
             cout << "\t\t\t\t" << setw(indent + 5) << root->info << " (" << getBalance(root) << ")" << endl;
         }
         else {
-            cout << "\t\t\t\tÄåðåâî ïóñòîå :(" << endl;
+            cout << "\t\t\t\tÐ”ÐµÑ€ÐµÐ²Ð¾ Ð¿ÑƒÑÑ‚Ð¾Ðµ :(" << endl;
         }
     }
 };

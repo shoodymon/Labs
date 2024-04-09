@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 
 #include "BinarySearchTree.h"
 
@@ -19,7 +19,7 @@ int main() {
 	tree.add(6);
 	tree.add(3);
 
-	//cout << "\n\t\t\t\tÎáõîä äåðåâà ñâåðõó âíèç (â ïðÿìîì ïîðÿäêå): A, B, C - ïðåôèêñíàÿ ôîðìà: \n" << endl; tree.showDirectOrder();
-	cout << "\n\t\t\t\tÎáõîä äåðåâà â ñèììåòðè÷íîì ïîðÿäêå (ñëåâà íàïðàâî): B, A, C - èíôèêñíàÿ ôîðìà: \n" << endl; tree.showSymmetricalOrder();
-	//cout << "\n\t\t\t\tÎáõîä äåðåâà â îáðàòíîì ïîðÿäêå (ñíèçó ââåðõ): B, C, A - ïîñòôèêñíàÿ ôîðìà.: \n" << endl; tree.showReverseOrder();
+	//cout << "\n\t\t\t\tÐžÐ±Ñ…Ð¾Ð´ Ð´ÐµÑ€ÐµÐ²Ð° ÑÐ²ÐµÑ€Ñ…Ñƒ Ð²Ð½Ð¸Ð· (Ð² Ð¿Ñ€ÑÐ¼Ð¾Ð¼ Ð¿Ð¾Ñ€ÑÐ´ÐºÐµ): A, B, C - Ð¿Ñ€ÐµÑ„Ð¸ÐºÑÐ½Ð°Ñ Ñ„Ð¾Ñ€Ð¼Ð°: \n" << endl; tree.showDirectOrder();
+	cout << "\n\t\t\t\tÐžÐ±Ñ…Ð¾Ð´ Ð´ÐµÑ€ÐµÐ²Ð° Ð² ÑÐ¸Ð¼Ð¼ÐµÑ‚Ñ€Ð¸Ñ‡Ð½Ð¾Ð¼ Ð¿Ð¾Ñ€ÑÐ´ÐºÐµ (ÑÐ»ÐµÐ²Ð° Ð½Ð°Ð¿Ñ€Ð°Ð²Ð¾): B, A, C - Ð¸Ð½Ñ„Ð¸ÐºÑÐ½Ð°Ñ Ñ„Ð¾Ñ€Ð¼Ð°: \n" << endl; tree.showSymmetricalOrder();
+	//cout << "\n\t\t\t\tÐžÐ±Ñ…Ð¾Ð´ Ð´ÐµÑ€ÐµÐ²Ð° Ð² Ð¾Ð±Ñ€Ð°Ñ‚Ð½Ð¾Ð¼ Ð¿Ð¾Ñ€ÑÐ´ÐºÐµ (ÑÐ½Ð¸Ð·Ñƒ Ð²Ð²ÐµÑ€Ñ…): B, C, A - Ð¿Ð¾ÑÑ‚Ñ„Ð¸ÐºÑÐ½Ð°Ñ Ñ„Ð¾Ñ€Ð¼Ð°.: \n" << endl; tree.showReverseOrder();
 }

@@ -1,10 +1,10 @@
-#include "AVL-tree.h"
+ï»¿#include "AVL-tree.h"
 
 int main() {
     setlocale(0, "");
     AVLTree tree;
 
-    cout << "\t\n\n\nÌîå äåðåâî: \n\n" << endl;
+    cout << "\t\n\n\nÐœÐ¾Ðµ Ð´ÐµÑ€ÐµÐ²Ð¾: \n\n" << endl;
 
     tree.insert(6);
     tree.insert(3);
@@ -17,7 +17,7 @@ int main() {
     tree.showSymmetricalOrder();
 
     AVLTree tree2;
-    cout << "\t\n\n\nÄåðåâî Àðòóðà: \n\n" << endl;
+    cout << "\t\n\n\nÐ”ÐµÑ€ÐµÐ²Ð¾ ÐÑ€Ñ‚ÑƒÑ€Ð°: \n\n" << endl;
     tree2.insert(2);
     tree2.insert(1);
     tree2.insert(0);
