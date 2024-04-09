@@ -93,17 +93,21 @@ private:
         int balance = getBalance(node);
 
         // Перебалансировка дерева, если необходимо
+        // RR - правый
         if (balance > 1 && info < node->left->info)
             return rightRotate(node);
 
+        // LL - левый
         if (balance < -1 && info > node->right->info)
             return leftRotate(node);
 
+        // LR - лево-правый
         if (balance > 1 && info > node->left->info) {
             node->left = leftRotate(node->left);
             return rightRotate(node);
         }
 
+        // RL - право-левый
         if (balance < -1 && info < node->right->info) {
             node->right = rightRotate(node->right);
             return leftRotate(node);
