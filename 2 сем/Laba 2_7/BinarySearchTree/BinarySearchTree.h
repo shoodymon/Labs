@@ -66,6 +66,7 @@ public:
         cout << "\n\t\t\t\tДерево удалено :(" << endl;
     }
 
+    // Метод для начала добавления нового элемента в дерево
     void add(int info) {
         if (root == nullptr) {
             root = new Node; // Создание нового корневого узла
@@ -76,6 +77,7 @@ public:
         }
     }
 
+    // Метод для рекурсивного добавления элемента в соответствующее место в дереве
     Node* add(int info, Node* tree) {
         // Рекурсивное добавление узла в дерево
         if (tree == nullptr) {
@@ -89,7 +91,7 @@ public:
         return tree;
     }
 
-    // Методы удаления узлов из дерева
+    // Метод  для рекурсивного удаления всех узлов дерева, начиная с заданного узла tree.
     void dell(Node* tree) {
         // Рекурсивное удаление узлов из дерева
         if (tree != nullptr) {
@@ -100,6 +102,8 @@ public:
         }
     }
 
+    // Метод для удаления узла с определенным значением info из дерева
+    // учитывает информацию о предыдущем узле и его отношении к удаляемому узлу (слева или справа).
     void dell(int info, Node* tree, Node* tree_pred, char leftOrRight) {
         // Удаление узла по значению
         if (tree == nullptr) {
@@ -123,6 +127,8 @@ public:
         }
     }
 
+    // Метод для удаления узла с определенным значением info из дерева
+    // начинает поиск с корня дерева
     void dell(int info) {
         // Удаление узла по значению
         if (root == nullptr) {
@@ -141,34 +147,45 @@ public:
         }
     }
 
+    // Метод для начала поиска в дереве
     bool search(int info) {
         if (root == nullptr) {
+            cout << "Пусто. Ничего не найдено. " << endl;
             return false;
         }
         else if (info == root->info) {
+            cout << "Узел найден. " << endl;
             return true;
         }
+        // Реркурсивный поиск в соответствующем поддереве
         else if (info < root->info) return search(info, root->left);
         else if (info > root->info) return search(info, root->right);
         else cout << "\t\t\t\tError." << endl;
     }
 
+    // Метод для рекурсивного поиска в поддереве, начиная с заданного узла
+    // Выполняет рекурсивный поиск в поддереве, начиная с этого узла
     bool search(int info, Node* tree) {
         if (tree == nullptr) {
+            cout << "Пусто. Ничего не найдено. " << endl;
             return false;
         }
         else if (info == tree->info) {
+            cout << "Узел найден. " << endl;
             return true;
         }
+        // Рекурсивно вызывает сам себя для поиска в левом или правом поддереве
         else if (info < tree->info) return search(info, tree->left);
         else if (info > tree->info) return search(info, tree->right);
         else cout << "\t\t\t\tError." << endl;
     }
 
+    // Прямой обход
     void showDirectOrder(Node* tree, int indent) {
 
         if (tree != nullptr) {
             cout << "\t\t\t\t" << setw(indent) << tree->info << /*" " << tree << " " << tree->left << " " << tree->right <<*/ endl;
+            // Рекурсивно вызывает себя для левого и правого поддеревьев текущего узла
             showDirectOrder(tree->left, indent + 6);
             showDirectOrder(tree->right, indent + 6);
         }
@@ -177,6 +194,7 @@ public:
         }
     }
 
+    // Прямой обход с корня
     void showDirectOrder(int indent = 5) {
 
         if (root != nullptr) {
@@ -189,6 +207,7 @@ public:
         }
     }
 
+    // Симметричный обход
     void showSymmetricalOrder(Node* tree, int indent) {
 
         if (tree != nullptr) {
@@ -201,6 +220,7 @@ public:
         }
     }
 
+    // Симметричный обход с корня
     void showSymmetricalOrder(int indent = 5) {
 
         if (root != nullptr) {
@@ -213,6 +233,7 @@ public:
         }
     }
 
+    // Обратный обход
     void showReverseOrder(Node* tree, int indent) {
 
         if (tree != nullptr) {
@@ -225,6 +246,7 @@ public:
         }
     }
 
+    // Обратный обход с корня
     void showReverseOrder(int indent = 5) {
 
         if (root != nullptr) {
@@ -235,6 +257,48 @@ public:
         else {
             cout << "\t\t\t\tДерево пустое :(" << endl;
         }
+    }
+
+    void erase(int key) {
+    Node* curr = root;
+    Node* parent = nullptr;
+
+    // Поиск узла для удаления
+    while (curr && curr->info != key) {
+        parent = curr;
+        if (key < curr->info)
+            curr = curr->left;
+        else
+            curr = curr->right;
+    }
+
+    // Если узел не найден, возвращаемся
+    if (!curr)
+        return;
+
+    // Удаление узла с одним или без потомков
+    if (curr->left == nullptr || curr->right == nullptr) {
+        Node* child = (curr->left != nullptr) ? curr->left : curr->right;
+
+        if (parent == nullptr) {
+            root = child; // Обновляем корень, если удаляемый узел был корнем
+        } else {
+            if (parent->left == curr)
+                parent->left = child;
+            else
+                parent->right = child;
+        }
+        delete curr;
+        return;
+    }
+
+    // Удаление узла с двумя потомками
+    Node* replace = curr->right;
+    while (replace->left)
+        replace = replace->left;
+    int replace_value = replace->info;
+    erase(replace_value); // Рекурсивно удаляем наименьший элемент из правого поддерева
+    curr->info = replace_value;
     }
 
 };

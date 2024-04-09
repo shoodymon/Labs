@@ -16,6 +16,7 @@ int main() {
 
     tree.showSymmetricalOrder();
 
+    /*
     AVLTree tree2;
     cout << "\t\n\n\nДерево Артура: \n\n" << endl;
     tree2.insert(2);
@@ -27,6 +28,7 @@ int main() {
     tree2.insert(3);
 
     tree2.showSymmetricalOrder();
+    */
 
     return 0;
 }

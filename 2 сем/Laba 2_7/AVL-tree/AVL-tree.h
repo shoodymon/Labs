@@ -37,30 +37,34 @@ private:
         return node;
     }
 
-    Node* rightRotate(Node* y) {
-        Node* x = y->left;
-        Node* T2 = x->right;
+    Node* rightRotate(Node* pivot_node) {
+        Node* new_root = pivot_node->left;          // Новый корень поддерева после поворота
+        Node* subtree_to_move = new_root->right;    // Поддерево, которое перемещается в результате поворота
 
-        x->right = y;
-        y->left = T2;
+        // Поворот
+        new_root->right = pivot_node;
+        pivot_node->left = subtree_to_move;
 
-        y->height = max(height(y->left), height(y->right)) + 1;
-        x->height = max(height(x->left), height(x->right)) + 1;
+        // Обновляем высоты узлов
+        pivot_node->height = max(height(pivot_node->left), height(pivot_node->right)) + 1;
+        new_root->height = max(height(new_root->left), height(new_root->right)) + 1;
 
-        return x;
+        return new_root;
     }
 
-    Node* leftRotate(Node* x) {
-        Node* y = x->right;
-        Node* T2 = y->left;
+    Node* leftRotate(Node* new_root) {
+        Node* pivot_node = new_root->right;         // Узел, вокруг которого происходит поворот
+        Node* subtree_to_move = pivot_node->left;   // Поддерево, которое перемещается в результате поворота
 
-        y->left = x;
-        x->right = T2;
+        // Поворот
+        pivot_node->left = new_root;
+        new_root->right = subtree_to_move;
 
-        x->height = max(height(x->left), height(x->right)) + 1;
-        y->height = max(height(y->left), height(y->right)) + 1;
+        // Обновляем высоты узлов
+        new_root->height = max(height(new_root->left), height(new_root->right)) + 1;
+        pivot_node->height = max(height(pivot_node->left), height(pivot_node->right)) + 1;
 
-        return y;
+        return pivot_node;
     }
 
     int getBalance(Node* node) {
@@ -80,10 +84,13 @@ private:
         else
             return node;
 
+        // Обновляем высоту текущего узла
         node->height = 1 + max(height(node->left), height(node->right));
 
+        // Получаем коэффициент балансировки текущего узла
         int balance = getBalance(node);
 
+        // Перебалансировка дерева, если необходимо
         if (balance > 1 && info < node->left->info)
             return rightRotate(node);
 
