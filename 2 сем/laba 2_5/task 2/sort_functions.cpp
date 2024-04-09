@@ -386,8 +386,8 @@ void sorting(vec& main_vector, arr& sort_array, Actions actions) {
         cout << "\tВведите номер (1-10): \t";    cin >> choice;
 
         if (choice > 0 and choice < sort_array.size()) {
-            Sort_func fcn = sort_array.at(choice);
-            fcn(main_vector, actions);
+            Sort_func fcn = sort_array.at(choice);              // записываем в переменную значение указателя на функцию
+            fcn(main_vector, actions);                          // неявное разыменование указателя --> выполнение функции sort
         }
         else if (choice == 10)
             break;
