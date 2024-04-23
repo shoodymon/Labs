@@ -123,8 +123,14 @@ bit_8_t encrypt_char(bit_8_t plaintext_8)
     cout << "Перестановка IP: " << plaintext_8 << endl;
 
 
-
     cout << "\n\t**** Вычисление шифрование f ключа №1 ****\n";
+
+    /*
+                                                МЕТОДЫ!
+        .to_string(): Преобразует битовую строку в строку символов, представляющую бинарное значение. 
+        .substr(0, 4): Берет подстроку из исходной строки, начиная с индекса 0 и длиной 4 символа.
+        .to_ulong(): Преобразует значение битового набора в unsigned long int
+    */
 
     // Получаем левую половину (последние 4 бит)
     bit_4_t plaintext_left_IP(plaintext_8.to_string().substr(0, 4));
@@ -206,7 +212,7 @@ bit_8_t encrypt_char(bit_8_t plaintext_8)
     return plaintext_8;
 }
 
-
+// Функция для расшифрования символа
 bit_8_t decrypt_char(bit_8_t ciphertext_8)
 {
     vector<bit_8_t> keys = generate_keys();
