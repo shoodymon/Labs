@@ -1,4 +1,4 @@
-#include "laba.h"
+﻿#include "laba.h"
 
 
 int main() {
