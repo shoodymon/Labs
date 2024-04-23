@@ -122,6 +122,7 @@ bit_8_t encrypt_char(bit_8_t plaintext_8)
     plaintext_8 = permute<8, 8>(plaintext_8, IP);
     cout << "Перестановка IP: " << plaintext_8 << endl;
 
+
     cout << "\n\t**** Вычисление шифрование f ключа №1 ****\n";
 
     /*
