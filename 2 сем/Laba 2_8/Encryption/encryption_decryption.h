@@ -33,7 +33,8 @@ const int S1[4][4] = { {0, 1, 2, 3}, {2, 0, 1, 3}, {3, 0, 1, 0}, {2, 1, 0, 3} };
 const bit_10_t KEY("0000010101");
 
 vector<bit_8_t> generate_keys();	
-template <size_t N, size_t M> bitset<M> permute(const bitset<N>& value, const vector<int>& table);	
+template <size_t N, size_t M> bitset<M> permute(const bitset<N>& value, const vector<int>& table);
+template<size_t N> bitset<N> сyclic_shift_left(bitset<N>& key, const int& shift);
 int sbox(bit_4_t value, const int S[4][4]);
 bit_8_t encrypt_char(bit_8_t plaintext);	
 bit_8_t decrypt_char(bit_8_t ciphertext_8);
