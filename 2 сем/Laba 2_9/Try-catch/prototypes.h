@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 #include <cmath>
+#include <sstream>
+#include <stdexcept>
 
 class UserInterface {
 public:
@@ -19,16 +21,15 @@ private:
     void exit();
 
     template <typename T>
-    T input(const std::string& request);
+    T input(const std::string& str);
 
     template <typename T>
-    void input(const std::string& request, T& variable);
+    void input(const std::string& str, T& variable);
 
     template <typename T>
     T input(const std::string& request, T min, T max);
 
-    std::vector<int> input(const std::string& request, int size);
-    void input(const std::string& request, std::vector<int>& arr);
+    std::vector<int> input(const std::string& request, std::vector<int>& arr);
 
     double divide(double a, double b);
     double divideWithException(double a, double b);

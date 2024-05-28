@@ -62,18 +62,35 @@ void UserInterface::exit() {
 }
 
 template <typename T>
-T UserInterface::input(const std::string& request) {
-    T value{};
-    std::cout << request;
+T UserInterface::input(const std::string& str) {
+    T value;
+    std::cout << str;
     std::cin >> value;
     return value;
 }
 
 template <typename T>
-void UserInterface::input(const std::string& request, T& variable) {
-    std::cout << request;
-    std::cin >> variable;
+void UserInterface::input(const std::string& str, T& variable) {
+    std::cout << str;
+    std::string input_str;
+    std::getline(std::cin, input_str);
+
+    try {
+        std::stringstream ss(input_str);
+        ss >> variable;
+
+        // Проверка на полное извлечение из строки
+        if (ss.rdbuf()->in_avail() != 0) {
+            throw std::invalid_argument("Некорректный ввод.");
+        }
+    }
+    catch (const std::exception& e) {
+        // Ввод не является числом
+        std::cout << e.what() << " Введите число." << std::endl;
+        variable = T(); // Присвоить значение по умолчанию для типа T
+    }
 }
+
 
 template <typename T>
 T UserInterface::input(const std::string& request, T min, T max) {
@@ -97,20 +114,36 @@ T UserInterface::input(const std::string& request, T min, T max) {
     }
 }
 
-std::vector<int> UserInterface::input(const std::string& request, int size) {
-    std::vector<int> arr(size);
-    std::cout << request << "[" << size << "]: ";
-    for (int i = 0; i < size; ++i) {
-        std::cin >> arr[i];
-    }
-    return arr;
-}
+std::vector<int> UserInterface::input(const std::string& request, std::vector<int>& arr) {
+    std::string numbStr = "";
+    std::cin.clear(); 
+    std::cin.ignore();
 
-void UserInterface::input(const std::string& request, std::vector<int>& arr) {
-    std::cout << request << "[" << arr.size() << "]: ";
-    for (int i = 0; i < arr.size(); ++i) {
-        std::cin >> arr[i];
+    for (size_t i = 0; i < arr.size(); i++) {
+        std::cout << request;
+        std::getline(std::cin, numbStr);
+
+        try {
+            double numb = std::stod(numbStr);
+            int result = static_cast<int>(numb);
+
+            if (result != numb) {
+                std::cout << "Число " << numb << " было преобразовано в " << result << "\n\n";
+            }
+
+            arr.at(i) = result;
+        }
+        catch (const std::invalid_argument& e) {
+            std::cerr << "Некорректное значение: строка не может быть преобразована в число\n";
+            i--; // Возвращаемся к текущему индексу
+        }
+        catch (const std::out_of_range& e) {
+            std::cerr << "Число выходит за пределы допустимого диапазона\n";
+            i--; // Возвращаемся к текущему индексу
+        }
     }
+
+    return arr;
 }
 
 double UserInterface::divide(double a, double b) {
@@ -190,23 +223,30 @@ void UserInterface::task1() {
     int a = input<int>("Введите a: ");
     std::cout << "Введенное значение a: " << a << std::endl;
 
-    double b;
-    input("Введите b: ", b);
+    double b = input<double>("Введите b: ");
     std::cout << "Введенное значение b: " << b << std::endl;
+
+    std::string c = input<std::string>("Введите c: ");
+    std::cout << "Введенное значение c: " << c << std::endl;
+
+    std::string d = input<std::string>("Введите d: ");
+    std::cout << "Введенное значение d: " << d << std::endl;
 }
 
 void UserInterface::task2() {
-    int c = input<int>("Введите c [0;5]: ", 0, 5);
-    std::cout << "Введенное значение c: " << c << std::endl;
+    int c = input<int>("Введите значение c в диапазоне [0;9]: ", 0, 10);
+    std::cout << "Введенное значение c = " << c << std::endl;
 }
 
 void UserInterface::task3() {
-    std::vector<int> arr = input("Введите массив : ", 5);
-    std::cout << "Введенный массив : ";
-    for (int x : arr) {
-        std::cout << x << " ";
+    std::vector<int> arr(5);
+    arr = input("Введите элемент массива (целочисленное число) --> ", arr);
+
+    std::cout << "\tВаш массив из целых чисел: { ";
+    for (size_t i = 0; i < arr.size() - 1; i++) {
+        std::cout << arr.at(i) << ", ";
     }
-    std::cout << std::endl;
+    std::cout << arr.at(arr.size() - 1) << " }\n\n";
 }
 
 void UserInterface::task4() {
