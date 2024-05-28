@@ -91,7 +91,6 @@ void UserInterface::input(const std::string& str, T& variable) {
     }
 }
 
-
 template <typename T>
 T UserInterface::input(const std::string& request, T min, T max) {
     T value{};
