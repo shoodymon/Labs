@@ -1,4 +1,4 @@
-#include "prototypes.h"
+п»ї#include "prototypes.h"
 #include <Windows.h>
 
 UserInterface::UserInterface() : flag(true) {
@@ -11,15 +11,15 @@ void UserInterface::run() {
     int choice = 0;
 
     do {
-        std::cout << "\n\tВыберите нужное задание: :)\n";
-        std::cout << "1) Задание 1\n";
-        std::cout << "2) Задание 2\n";
-        std::cout << "3) Задание 3\n";
-        std::cout << "4) Задание 4\n";
-        std::cout << "5) Задание 5\n";
-        std::cout << "6) Задание 6\n";
-        std::cout << "7) Выход\n";
-        std::cout << "\tВаш выбор --> ";
+        std::cout << "\n\tР’С‹Р±РµСЂРёС‚Рµ РЅСѓР¶РЅРѕРµ Р·Р°РґР°РЅРёРµ: :)\n";
+        std::cout << "1) Р—Р°РґР°РЅРёРµ 1\n";
+        std::cout << "2) Р—Р°РґР°РЅРёРµ 2\n";
+        std::cout << "3) Р—Р°РґР°РЅРёРµ 3\n";
+        std::cout << "4) Р—Р°РґР°РЅРёРµ 4\n";
+        std::cout << "5) Р—Р°РґР°РЅРёРµ 5\n";
+        std::cout << "6) Р—Р°РґР°РЅРёРµ 6\n";
+        std::cout << "7) Р’С‹С…РѕРґ\n";
+        std::cout << "\tР’Р°С€ РІС‹Р±РѕСЂ --> ";
         std::cin >> choice;
         std::cout << '\n' << '\n';
 
@@ -52,11 +52,11 @@ void UserInterface::run() {
 }
 
 void UserInterface::error() {
-    std::cout << "Ошибка! Неверный выбор. Попробуйте еще раз." << std::endl;
+    std::cout << "РћС€РёР±РєР°! РќРµРІРµСЂРЅС‹Р№ РІС‹Р±РѕСЂ. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰Рµ СЂР°Р·." << std::endl;
 }
 
 void UserInterface::exit() {
-    std::string message = "Завершение работы...";
+    std::string message = "Р—Р°РІРµСЂС€РµРЅРёРµ СЂР°Р±РѕС‚С‹...";
     std::cout << message << std::endl;
     flag = false;
 }
@@ -86,11 +86,11 @@ T UserInterface::input(const std::string& request, T min, T max) {
                 return value;
             }
             else {
-                throw std::out_of_range("Значение вне диапазона");
+                throw std::out_of_range("Р—РЅР°С‡РµРЅРёРµ РІРЅРµ РґРёР°РїР°Р·РѕРЅР°");
             }
         }
         catch (const std::exception& e) {
-            std::cerr << "Ошибка: " << e.what() << ". Попробуйте еще раз." << std::endl;
+            std::cerr << "РћС€РёР±РєР°: " << e.what() << ". РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰Рµ СЂР°Р·." << std::endl;
             std::cin.clear();
             std::cin.ignore();
         }
@@ -115,7 +115,7 @@ void UserInterface::input(const std::string& request, std::vector<int>& arr) {
 
 double UserInterface::divide(double a, double b) {
     if (b == 0) {
-        throw std::invalid_argument("Деление на ноль");
+        throw std::invalid_argument("Р”РµР»РµРЅРёРµ РЅР° РЅРѕР»СЊ");
     }
     return a / b;
 }
@@ -126,15 +126,15 @@ double UserInterface::divideWithException(double a, double b) {
         result = divide(a, b);
     }
     catch (const std::exception& e) {
-        // std::cerr << "Ошибка1: " << e.what() << std::endl;
-        throw; // Выбрасываем исключение дальше без вывода сообщения
+        // std::cerr << "РћС€РёР±РєР°1: " << e.what() << std::endl;
+        throw; // Р’С‹Р±СЂР°СЃС‹РІР°РµРј РёСЃРєР»СЋС‡РµРЅРёРµ РґР°Р»СЊС€Рµ Р±РµР· РІС‹РІРѕРґР° СЃРѕРѕР±С‰РµРЅРёСЏ
     }
     return result;
 }
 
 double UserInterface::sqrt(double x) {
     if (x < 0) {
-        throw std::domain_error("Отрицательный корень");
+        throw std::domain_error("РћС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Р№ РєРѕСЂРµРЅСЊ");
     }
     return std::sqrt(x);
 }
@@ -144,7 +144,7 @@ double UserInterface::sqrtWithException(double x) {
         return sqrt(x);
     }
     catch (const std::exception& e) {
-        std::cerr << "Ошибка: " << e.what() << std::endl;
+        std::cerr << "РћС€РёР±РєР°: " << e.what() << std::endl;
         return 0;
     }
 }
@@ -155,7 +155,7 @@ int UserInterface::stringToInt(const std::string& str) {
     size_t i{ 0 };
      
     if (str.empty()) { 
-        throw std::invalid_argument("Пустая строка не может быть преобразована в число"); 
+        throw std::invalid_argument("РџСѓСЃС‚Р°СЏ СЃС‚СЂРѕРєР° РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅР° РІ С‡РёСЃР»Рѕ"); 
     }
 
     if (str[0] == '-') { 
@@ -168,7 +168,7 @@ int UserInterface::stringToInt(const std::string& str) {
 
     for (; i < str.length(); ++i) { 
         if (str[i] < '0' || str[i] > '9') { 
-            throw std::invalid_argument("Неверный формат данных: строка содержит недопустимые символы"); 
+            throw std::invalid_argument("РќРµРІРµСЂРЅС‹Р№ С„РѕСЂРјР°С‚ РґР°РЅРЅС‹С…: СЃС‚СЂРѕРєР° СЃРѕРґРµСЂР¶РёС‚ РЅРµРґРѕРїСѓСЃС‚РёРјС‹Рµ СЃРёРјРІРѕР»С‹"); 
         }
         value = value * 10 + (str[i] - '0'); 
     }
@@ -181,28 +181,28 @@ int UserInterface::stringToIntWithException(const std::string& str) {
         return stringToInt(str);
     }
     catch (const std::invalid_argument& e) {
-        std::cerr << "\nОшибка: " << e.what() << std::endl;
-        return 0;  // Возвращаем значение по умолчанию в случае ошибки
+        std::cerr << "\nРћС€РёР±РєР°: " << e.what() << std::endl;
+        return 0;  // Р’РѕР·РІСЂР°С‰Р°РµРј Р·РЅР°С‡РµРЅРёРµ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ РІ СЃР»СѓС‡Р°Рµ РѕС€РёР±РєРё
     }
 }
 
 void UserInterface::task1() {
-    int a = input<int>("Введите a: ");
-    std::cout << "Введенное значение a: " << a << std::endl;
+    int a = input<int>("Р’РІРµРґРёС‚Рµ a: ");
+    std::cout << "Р’РІРµРґРµРЅРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ a: " << a << std::endl;
 
     double b;
-    input("Введите b: ", b);
-    std::cout << "Введенное значение b: " << b << std::endl;
+    input("Р’РІРµРґРёС‚Рµ b: ", b);
+    std::cout << "Р’РІРµРґРµРЅРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ b: " << b << std::endl;
 }
 
 void UserInterface::task2() {
-    int c = input<int>("Введите c [0;5]: ", 0, 5);
-    std::cout << "Введенное значение c: " << c << std::endl;
+    int c = input<int>("Р’РІРµРґРёС‚Рµ c [0;5]: ", 0, 5);
+    std::cout << "Р’РІРµРґРµРЅРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ c: " << c << std::endl;
 }
 
 void UserInterface::task3() {
-    std::vector<int> arr = input("Введите массив : ", 5);
-    std::cout << "Введенный массив : ";
+    std::vector<int> arr = input("Р’РІРµРґРёС‚Рµ РјР°СЃСЃРёРІ : ", 5);
+    std::cout << "Р’РІРµРґРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ : ";
     for (int x : arr) {
         std::cout << x << " ";
     }
@@ -210,36 +210,36 @@ void UserInterface::task3() {
 }
 
 void UserInterface::task4() {
-    double x = input<double>("Введите x: ");
-    double y = input<double>("Введите y: ");
+    double x = input<double>("Р’РІРµРґРёС‚Рµ x: ");
+    double y = input<double>("Р’РІРµРґРёС‚Рµ y: ");
     try {
         double result = divideWithException(x, y);
-        std::cout << "Результат деления " << x << " на " << y << ": " << result << std::endl;
+        std::cout << "Р РµР·СѓР»СЊС‚Р°С‚ РґРµР»РµРЅРёСЏ " << x << " РЅР° " << y << ": " << result << std::endl;
     }
     catch (const std::exception& e) {
-        // Обработка исключения здесь
-        std::cerr << "Ошибка: " << e.what() << std::endl;
+        // РћР±СЂР°Р±РѕС‚РєР° РёСЃРєР»СЋС‡РµРЅРёСЏ Р·РґРµСЃСЊ
+        std::cerr << "РћС€РёР±РєР°: " << e.what() << std::endl;
     }
 }
 
 void UserInterface::task5() {
-    double z = input<double>("Введите z: ");
+    double z = input<double>("Р’РІРµРґРёС‚Рµ z: ");
     double sqrtResult = sqrtWithException(z);
     if (z >= 0) {
-        std::cout << "Квадратный корень из " << z << ": " << sqrtResult << std::endl;
+        std::cout << "РљРІР°РґСЂР°С‚РЅС‹Р№ РєРѕСЂРµРЅСЊ РёР· " << z << ": " << sqrtResult << std::endl;
     }
     else {
-        std::cout << "Квадратный корень не может быть вычислен для отрицательного числа: " << z << std::endl;
+        std::cout << "РљРІР°РґСЂР°С‚РЅС‹Р№ РєРѕСЂРµРЅСЊ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РІС‹С‡РёСЃР»РµРЅ РґР»СЏ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕРіРѕ С‡РёСЃР»Р°: " << z << std::endl;
     }
 }
 
 void UserInterface::task6() {
-    std::string strValue = input<std::string>("Введите строку для преобразования в число: ");
+    std::string strValue = input<std::string>("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ РґР»СЏ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ РІ С‡РёСЃР»Рѕ: ");
     int intValue = stringToIntWithException(strValue);
     if (intValue != 0 || (intValue == 0 && strValue == "0")) {  
-        std::cout << "Результат преобразования строки '" << strValue << "' в число: " << intValue << std::endl;
+        std::cout << "Р РµР·СѓР»СЊС‚Р°С‚ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ СЃС‚СЂРѕРєРё '" << strValue << "' РІ С‡РёСЃР»Рѕ: " << intValue << std::endl;
     }
     else {
-        std::cout << "Конечная обработка ошибки: строка '" << strValue << "' не может быть преобразована в число" << std::endl;
+        std::cout << "РљРѕРЅРµС‡РЅР°СЏ РѕР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РєРё: СЃС‚СЂРѕРєР° '" << strValue << "' РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅР° РІ С‡РёСЃР»Рѕ" << std::endl;
     }
 }
